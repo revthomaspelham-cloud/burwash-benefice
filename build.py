@@ -43,7 +43,7 @@ NAV = [
         ("Bellringing", "bellringing.html", "bellringing"),
         ("Sidespeople & welcome", "get-involved.html#sidespeople", "sidespeople"),
         ("Readers", "get-involved.html#readers", "readers"),
-        ("3Cs café", "get-involved.html#3cs", "3cs"),
+        ("3Cs: Coffee, Cake & Chat", "get-involved.html#3cs", "3cs"),
         ("Pastoral visiting", "get-involved.html#pastoral", "pastoral"),
         ("House groups", "get-involved.html#house-groups", "house-groups"),
         ("Toddler groups", "get-involved.html#toddlers", "toddlers"),
