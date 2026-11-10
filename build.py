@@ -105,7 +105,7 @@ def render_nav(active):
 LOGO_SVG = """<svg class="logo-mark" viewBox="0 0 40 48" aria-hidden="true"><path d="M20 2v8M16 6h8M12 18l8-8 8 8v28H12z M6 46V28l6-5M34 46V28l-6-5M4 46h32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M17 46v-9a3 3 0 0 1 6 0v9" fill="none" stroke="currentColor" stroke-width="2"/></svg>"""
 
 
-THEME = None  # None, "blend" or "full" (branding mock-ups)
+THEME = "mix"  # live design. Alternatives kept for reference: None (original plum), "blend", "full"
 
 WORDMARK = '<span class="wm"><b>B</b>urwash<span class="sep">,</span> <b>B</b>urwash <b>W</b>eald<span class="sep">,</span> <b>E</b>tchingham</span>'
 TAGLINE = '<span class="tagline">Worship for Everybody</span>'
