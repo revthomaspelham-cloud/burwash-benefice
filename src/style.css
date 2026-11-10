@@ -136,3 +136,20 @@ img.logo-mark{width:48px;height:auto;max-height:60px}
 .site-footer .cofe{display:inline-block;margin:.25rem 0 1rem}
 .site-footer .cofe img{width:90px;height:auto}
 .site-footer .cofe:hover{opacity:.85}
+.calendar-frame iframe.short{height:380px}
+.pattern{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;margin:1.5rem 0 1rem}
+.week{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--plum);border-radius:var(--radius);padding:1.1rem 1.25rem}
+.week h3{font-size:1.4rem;margin-bottom:.6rem}
+.week ul{list-style:none;margin:0;padding:0}
+.week li{display:grid;grid-template-columns:4.6rem 1fr;gap:.5rem;padding:.55rem 0;border-top:1px solid var(--stone-2);line-height:1.35}
+.week li:first-child{border-top:0}
+.week .t{font-weight:600;color:var(--plum)}
+.week em{font-style:normal;color:var(--ink-soft);font-size:.92rem}
+@media (min-width:760px){.pattern{grid-template-columns:repeat(2,1fr)}}
+.vision{background:var(--plum-deep);color:rgba(255,255,255,.9)}
+.vision h2,.vision h3{color:var(--white)}
+.vision-intro{max-width:760px}
+.vision-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;margin-top:1.5rem}
+.vision-grid div{border-top:3px solid var(--gold);padding-top:1rem}
+.vision-grid h3{font-size:1.7rem;margin-bottom:.3rem}
+.vision-grid p{margin:0}
