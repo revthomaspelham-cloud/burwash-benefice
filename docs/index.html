@@ -147,14 +147,15 @@
 <script>document.querySelectorAll('[data-until]').forEach(function(el){if(new Date()>=new Date(el.dataset.until))el.remove();});</script>
 <script>
 (function(){
-  // Seasonal banner: snow from Advent Sunday until Epiphany (6 Jan); summer view May-September; autumn bench view otherwise
+  // Seasonal banner: snow from Advent Sunday until Epiphany (6 Jan); Etchingham March-April; summer view May-September; autumn bench view otherwise
   var params=new URLSearchParams(location.search), now=params.get('date')?new Date(params.get('date')):new Date();
   var y=now.getFullYear(), m=now.getMonth(), d=now.getDate();
   function adventSunday(year){var dt=new Date(year,10,27);while(dt.getDay()!==0)dt.setDate(dt.getDate()+1);return dt;}
   var winter=(m===0&&d<=6)||(now>=adventSunday(y));
+  var spring=(m>=2&&m<=3); // March and April
   var summer=(m>=4&&m<=8); // May to September
   var h=document.querySelector('.hero-photo');
-  if(h){ if(winter) h.classList.add('season-winter'); else if(summer) h.classList.add('season-summer'); }
+  if(h){ if(winter) h.classList.add('season-winter'); else if(spring) h.classList.add('season-spring'); else if(summer) h.classList.add('season-summer'); }
 })();
 </script>
 

@@ -59,3 +59,5 @@
 @media (max-width:700px){.theme-mix .hero-photo.season-winter{background:linear-gradient(rgba(50,26,58,.75),rgba(50,26,58,.75)),url("images/weald-snow.jpg") center 55%/cover}}
 .theme-mix .hero-photo.season-summer{background:linear-gradient(100deg,rgba(50,26,58,.88) 0%,rgba(50,26,58,.55) 45%,rgba(50,26,58,.05) 80%),url("images/weald-summer.jpg") center 50%/cover}
 @media (max-width:700px){.theme-mix .hero-photo.season-summer{background:linear-gradient(rgba(50,26,58,.75),rgba(50,26,58,.75)),url("images/weald-summer.jpg") center 50%/cover}}
+.theme-mix .hero-photo.season-spring{background:linear-gradient(100deg,rgba(50,26,58,.88) 0%,rgba(50,26,58,.55) 45%,rgba(50,26,58,.05) 80%),url("images/etchingham-spring.jpg") 60% 45%/cover}
+@media (max-width:700px){.theme-mix .hero-photo.season-spring{background:linear-gradient(rgba(50,26,58,.75),rgba(50,26,58,.75)),url("images/etchingham-spring.jpg") 55% 45%/cover}}

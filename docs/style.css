@@ -251,3 +251,5 @@ a.inv:hover{box-shadow:0 10px 24px rgba(50,26,58,.1);color:var(--ink)}
 .exp-photo img{width:100%;height:100%;object-fit:cover}
 .exp:has(.exp-photo){border-left-width:1px;border-top:6px solid var(--c)}
 .expect{align-items:start}
+.inv .exp-photo{margin:-1.25rem -1.4rem 1rem}
+.involve-grid{align-items:start}
