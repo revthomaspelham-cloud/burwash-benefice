@@ -107,7 +107,7 @@ LOGO_SVG = """<svg class="logo-mark" viewBox="0 0 40 48" aria-hidden="true"><pat
 
 THEME = None  # None, "blend" or "full" (branding mock-ups)
 
-WORDMARK = '<span class="wm"><b>B</b>urwash <b>B</b>urwash <b>W</b>eald <b>E</b>tchingham</span>'
+WORDMARK = '<span class="wm"><b>B</b>urwash<span class="sep">,</span> <b>B</b>urwash <b>W</b>eald<span class="sep">,</span> <b>E</b>tchingham</span>'
 TAGLINE = '<span class="tagline">Worship for Everybody</span>'
 
 
