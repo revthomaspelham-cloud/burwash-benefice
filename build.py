@@ -32,7 +32,8 @@ NAV = [
         ("Weddings", "weddings.html", "weddings"),
         ("Funerals", "funerals.html", "funerals"),
     ]),
-    ("Churches", "index.html#churches", "churches", [
+    ("About us", "about.html", "about", [
+        ("Who we are", "about.html", "about"),
         ("St Bartholomew's, Burwash", "burwash.html", "burwash"),
         ("St Philip's, Burwash Weald", "burwash-weald.html", "burwash-weald"),
         ("Etchingham", "etchingham.html", "etchingham"),
