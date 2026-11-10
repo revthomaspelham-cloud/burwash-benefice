@@ -1,27 +1,27 @@
 /* Option 3 – mix: plum and dark like the Blend, with option 2's wordmarks and shapes; light condensed capitals */
-.theme-mix{--gold:#ff914d;--radius:14px}
+.theme-mix{--gold:#e39a4e;--radius:14px}
 .theme-mix h1,.theme-mix h2,.theme-mix h3{font-family:"Oswald",var(--sans);font-weight:300;text-transform:uppercase;letter-spacing:.04em;line-height:1.1}
 .theme-mix h1{font-size:clamp(2.4rem,5vw,3.6rem);font-weight:200}
 .theme-mix h2{font-size:clamp(1.7rem,3vw,2.3rem)}
 .theme-mix h3{font-size:1.3rem;font-weight:400;letter-spacing:.03em}
 .theme-mix .card h3,.theme-mix .give-card h3{text-transform:none;letter-spacing:.01em;font-size:1.35rem}
-.theme-mix a:hover{color:#ff914d}
+.theme-mix a:hover{color:#e39a4e}
 
 /* header wordmark */
 .theme-mix .wm{display:block;font-family:"Oswald",var(--sans);font-weight:300;text-transform:uppercase;letter-spacing:.06em;font-size:1.3rem;line-height:1.1;color:#fff}
-.theme-mix .wm b,.theme-mix .church-wm b{color:#ff914d;font-weight:400}
-.theme-mix .tagline{display:block;font-family:"Indie Flower",cursive;color:#ff914d;font-size:1.1rem;line-height:1.1;margin-top:.15rem}
-.theme-mix .site-header,.theme-mix .site-footer{border-color:#ff914d}
-.theme-mix .site-nav a.active{box-shadow:inset 0 -2px 0 #ff914d}
+.theme-mix .wm b,.theme-mix .church-wm b{color:#e39a4e;font-weight:400}
+.theme-mix .tagline{display:block;font-family:"Indie Flower",cursive;color:#e39a4e;font-size:1.1rem;line-height:1.1;margin-top:.15rem}
+.theme-mix .site-header,.theme-mix .site-footer{border-color:#e39a4e}
+.theme-mix .site-nav a.active{box-shadow:inset 0 -2px 0 #e39a4e}
 
 /* hero */
 .theme-mix .hero h1{color:#fff}
-.theme-mix .eyebrow{color:#ff914d}
-.theme-mix .btn{background:#ff914d;color:#fff;border-radius:999px}
-.theme-mix .btn:hover{background:#ff7a2b;color:#fff}
+.theme-mix .eyebrow{color:#e39a4e}
+.theme-mix .btn{background:#e39a4e;color:#fff;border-radius:999px}
+.theme-mix .btn:hover{background:#cf8640;color:#fff}
 .theme-mix .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.7);color:#fff}
 .theme-mix .btn.ghost:hover{background:rgba(255,255,255,.12)}
-.theme-mix .nav-give a{background:#ff914d;color:#fff!important;border-radius:999px}
+.theme-mix .nav-give a{background:#e39a4e;color:#fff!important;border-radius:999px}
 
 /* page heads */
 .theme-mix .page-head h1{color:#fff}
@@ -31,11 +31,11 @@
 
 /* blocks */
 .theme-mix .card,.theme-mix .give-card{border-radius:18px}
-.theme-mix .card .place,.theme-mix .give-card .place{color:#d9661c}
-.theme-mix .facts,.theme-mix .give-box{border-left-color:#ff914d}
-.theme-mix .week{border-top-color:#ff914d}
-.theme-mix .week .t{color:#d9661c}
-.theme-mix .feature .icon{background:#fff1e8;color:#d9661c}
+.theme-mix .card .place,.theme-mix .give-card .place{color:#b9762f}
+.theme-mix .facts,.theme-mix .give-box{border-left-color:#e39a4e}
+.theme-mix .week{border-top-color:#e39a4e}
+.theme-mix .week .t{color:#b9762f}
+.theme-mix .feature .icon{background:#fff1e8;color:#b9762f}
 .theme-mix .vision-grid div:nth-child(1){border-top-color:#99daff}
 .theme-mix .vision-grid div:nth-child(2){border-top-color:#b1a1ed}
 .theme-mix .vision-grid div:nth-child(3){border-top-color:#bee597}
