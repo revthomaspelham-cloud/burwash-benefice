@@ -258,3 +258,6 @@ a.inv:hover{box-shadow:0 10px 24px rgba(50,26,58,.1);color:var(--ink)}
 .news-bar .nb-item.on{display:block;animation:nbfade .5s ease}
 @keyframes nbfade{from{opacity:0}to{opacity:1}}
 @media (prefers-reduced-motion:reduce){.news-bar .nb-item.on{animation:none}}
+
+.rector-photo{float:right;width:190px;margin:0 0 1rem 1.5rem;border-radius:var(--radius);border:1px solid var(--line)}
+@media (max-width:520px){.rector-photo{float:none;display:block;margin:0 auto 1rem}}
