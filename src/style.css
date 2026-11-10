@@ -153,3 +153,36 @@ img.logo-mark{width:48px;height:auto;max-height:60px}
 .vision-grid div{border-top:3px solid var(--gold);padding-top:1rem}
 .vision-grid h3{font-size:1.7rem;margin-bottom:.3rem}
 .vision-grid p{margin:0}
+/* Find your place */
+.find{background:var(--white);border-bottom:1px solid var(--line)}
+.find-head{text-align:center;max-width:640px;margin:0 auto 2rem}
+.find-head p{font-size:1.15rem}
+.find-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.find-col{border-radius:18px;padding:1.4rem 1.4rem 1.2rem;--c:#99daff;background:color-mix(in srgb,var(--c) 22%,white)}
+.find-col.c-blue{--c:#99daff}.find-col.c-lilac{--c:#b1a1ed}.find-col.c-green{--c:#bee597}
+.find-col .quote{font-family:"Indie Flower",var(--serif);font-size:1.55rem;line-height:1.2;text-align:center;margin:.2rem 0 1rem;color:var(--ink)}
+.find-col .opt{background:var(--c);border-radius:999px;padding:.8rem 1.2rem;text-align:center;line-height:1.35;color:#1d1d1d}
+.find-col .opt strong{display:block}
+.find-col .opt em{font-style:normal;font-size:.92rem;opacity:.85}
+.find-col .alt{display:block;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600;opacity:.7}
+.find-col .or{font-family:"Indie Flower",var(--serif);text-align:center;font-size:1.3rem;margin:.35rem 0}
+.find-foot{text-align:center;margin:1.75rem 0 0}
+/* Giving */
+.nav-give a{background:var(--gold);color:var(--plum-deep)!important;margin-left:.35rem}
+.nav-give a:hover,.nav-give a.active{background:#c99d4f;box-shadow:none}
+.give-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem;text-align:center;display:flex;flex-direction:column;align-items:center}
+.give-card .place{color:var(--gold);font-weight:600;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem}
+.give-card h3{flex:1}
+.give-card .qr{margin-top:1rem;width:150px;height:150px}
+.give-box{background:var(--white);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:var(--radius);padding:1.25rem 1.5rem;margin:1.5rem 0}
+.give-box h3{font-size:1.25rem}
+.give-strip{background:var(--stone-2);padding:2rem 0;border-top:1px solid var(--line)}
+.give-strip .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem 2rem;flex-wrap:wrap}
+.give-strip h2{margin-bottom:.2rem}.give-strip p{margin:0}
+.theme-blend .nav-give a{background:#ff914d;color:#fff!important}
+.theme-blend .give-card .place{color:#ff914d}
+.theme-blend .give-box{border-left-color:#ff914d}
+.theme-full .nav-give a{background:#ff914d;color:#fff!important;border-radius:999px}
+.theme-full .give-card{border-radius:18px}.theme-full .give-card .place{color:#d9661c}
+.theme-full .give-box{border-left-color:#ff914d}
+.theme-full .give-strip{background:#fff1e8}

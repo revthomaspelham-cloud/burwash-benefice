@@ -42,6 +42,7 @@ NAV = [
         ("Bellringing", "bellringing.html", "bellringing"),
     ]),
     ("Safeguarding", "safeguarding.html", "safeguarding", []),
+    ("Give", "give.html", "give", []),
 ]
 
 # Old website-builder URLs -> new pages (kept working via redirect stubs)
@@ -96,11 +97,18 @@ def render_nav(active):
             )
         else:
             cur = ' aria-current="page"' if is_active else ""
-            items.append(f'<li><a href="{href}"{cls}{cur}>{html.escape(label)}</a></li>')
+            extra = ' class="nav-give"' if key == "give" else ""
+            items.append(f'<li{extra}><a href="{href}"{cls}{cur}>{html.escape(label)}</a></li>')
     return "".join(items)
 
 
 LOGO_SVG = """<svg class="logo-mark" viewBox="0 0 40 48" aria-hidden="true"><path d="M20 2v8M16 6h8M12 18l8-8 8 8v28H12z M6 46V28l6-5M34 46V28l-6-5M4 46h32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M17 46v-9a3 3 0 0 1 6 0v9" fill="none" stroke="currentColor" stroke-width="2"/></svg>"""
+
+
+THEME = None  # None, "blend" or "full" (branding mock-ups)
+
+WORDMARK = '<span class="wm"><b>B</b>urwash <b>B</b>urwash <b>W</b>eald <b>E</b>tchingham</span>'
+TAGLINE = '<span class="tagline">Worship for Everybody</span>'
 
 
 def page(meta, body):
@@ -108,6 +116,16 @@ def page(meta, body):
     full_title = SITE_NAME if meta.get("nav") == "home" else f"{title} | {SITE_NAME}"
     desc = meta.get("description", "Church of England parishes of Burwash, Burwash Weald and Etchingham, East Sussex.")
     c = CONTACT
+    theme_css = f'\n<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">\n<link rel="stylesheet" href="theme-{THEME}.css">' if THEME else ""
+    if THEME == "full":
+        brand_text = f'<span>{WORDMARK}{TAGLINE}</span>'
+    elif THEME == "blend":
+        brand_text = f'<span><span class="brand-small">The Benefice of</span><span class="brand-big">Burwash, Burwash Weald &amp; Etchingham</span>{TAGLINE}</span>'
+    else:
+        brand_text = '<span><span class="brand-small">The Benefice of</span><span class="brand-big">Burwash, Burwash Weald &amp; Etchingham</span></span>'
+    wm = meta.get("wordmark")
+    if THEME and wm:
+        body = body.replace('<div class="page-head"><div class="wrap">', f'<div class="page-head has-wm"><div class="wrap"><p class="church-wm">{wm}</p>{TAGLINE}', 1)
     return f"""<!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -117,16 +135,16 @@ def page(meta, body):
 <meta name="description" content="{html.escape(desc)}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Indie+Flower&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">{theme_css}
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 </head>
-<body>
+<body class="{('theme-' + THEME) if THEME else ''}">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="index.html"><img class="logo-mark" src="images/crossburst.png" alt="" width="40" height="50"><span><span class="brand-small">The Benefice of</span><span class="brand-big">Burwash, Burwash Weald &amp; Etchingham</span></span></a>
+    <a class="brand" href="index.html"><img class="logo-mark" src="images/crossburst.png" alt="" width="40" height="50">{brand_text}</a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav id="site-nav" class="site-nav" aria-label="Main"><ul>{render_nav(meta.get("nav", ""))}</ul></nav>
   </div>
@@ -149,6 +167,15 @@ def page(meta, body):
         <li><a href="burwash.html">St Bartholomew's, Burwash</a></li>
         <li><a href="burwash-weald.html">St Philip's, Burwash Weald</a></li>
         <li><a href="etchingham.html">The Assumption of the Blessed Virgin &amp; St Nicholas, Etchingham</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Support us</h2>
+      <p>Give regularly through the Parish Giving Scheme:</p>
+      <ul class="plain">
+        <li><a href="https://www.parishgiving.org.uk/donors/find-your-parish/burwash-st-bartholomews-etchingham">St Bartholomew's, Burwash</a></li>
+        <li><a href="https://www.parishgiving.org.uk/donors/find-your-parish/burwash-weald-st-philip-burwash-common">St Philip's, Burwash Weald</a></li>
+        <li><a href="https://www.parishgiving.org.uk/donors/find-your-parish/etchingham-st-mary-w-nicholas-hastings-tunbridge-wells">Etchingham</a></li>
       </ul>
     </div>
     <div>
@@ -178,14 +205,18 @@ def redirect_stub(target):
 """
 
 
-def build(with_redirects=True):
+def build(with_redirects=True, out=None):
+    global OUT
+    if out: OUT = out
     if OUT.exists():
         shutil.rmtree(OUT)
-    OUT.mkdir()
+    OUT.mkdir(parents=True)
     for p in sorted((SRC / "pages").glob("*.html")):
         meta, body = parse(p)
         (OUT / p.name).write_text(page(meta, body), encoding="utf-8")
     shutil.copy(SRC / "style.css", OUT / "style.css")
+    if THEME:
+        shutil.copy(SRC / f"theme-{THEME}.css", OUT / f"theme-{THEME}.css")
     if (SRC / "images").exists():
         shutil.copytree(SRC / "images", OUT / "images")
     if with_redirects:
@@ -199,4 +230,9 @@ def build(with_redirects=True):
 
 
 if __name__ == "__main__":
-    build()
+    import sys
+    if len(sys.argv) > 2:  # python3 build.py <theme> <outdir>
+        THEME = sys.argv[1]
+        build(with_redirects=False, out=pathlib.Path(sys.argv[2]))
+    else:
+        build()

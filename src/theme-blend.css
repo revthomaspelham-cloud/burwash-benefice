@@ -1,0 +1,15 @@
+/* Option 1 – blend: plum layout, "Worship for Everybody" orange accents */
+.theme-blend{--gold:#ff914d}
+.theme-blend .tagline{display:block;font-family:"Indie Flower",cursive;color:#ff914d;font-size:1.05rem;line-height:1.1;margin-top:.1rem}
+.theme-blend .site-header,.theme-blend .site-footer{border-color:#ff914d}
+.theme-blend .btn{background:#ff914d;color:#fff}
+.theme-blend .btn:hover{background:#ff7a2b;color:#fff}
+.theme-blend .btn.ghost{background:transparent}
+.theme-blend a:hover{color:#ff914d}
+.theme-blend .eyebrow,.theme-blend .card .place{color:#ff914d}
+.theme-blend .page-head .church-wm{font-family:"Bebas Neue",var(--sans);font-size:clamp(2.6rem,6vw,4.2rem);line-height:.9;margin:0;letter-spacing:.01em;color:#fff}
+.theme-blend .church-wm b{color:#ff914d;font-weight:400}
+.theme-blend .page-head.has-wm .tagline{font-size:1.6rem;margin:.3rem 0 0}
+.theme-blend .page-head.has-wm .eyebrow,.theme-blend .page-head.has-wm h1{display:none}
+.theme-blend .vision-grid div{border-color:#ff914d}
+.theme-blend .facts{border-left-color:#ff914d}

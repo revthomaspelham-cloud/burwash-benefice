@@ -1,0 +1,73 @@
+/* Option 2 – full "Worship for Everybody" brand: light, orange and charcoal */
+.theme-full{
+  --ink:#3d3d3d;--ink-soft:#6b6b6b;--plum:#545454;--plum-deep:#3d3d3d;--gold:#ff914d;
+  --stone:#fbf8f3;--stone-2:#f1ece4;--line:#e6dfd4;--white:#ffffff;--radius:16px;
+  --serif:"Bebas Neue","Source Sans 3",sans-serif;
+}
+.theme-full h1,.theme-full h2,.theme-full h3{font-family:"Bebas Neue",var(--sans);font-weight:400;letter-spacing:.01em;color:#545454}
+.theme-full h1{font-size:clamp(2.8rem,6vw,4.4rem);line-height:.95}
+.theme-full h2{font-size:clamp(2.1rem,4vw,2.8rem)}
+.theme-full h3{font-size:1.6rem}
+.theme-full a{color:#d9661c}
+.theme-full a:hover{color:#ff914d}
+.theme-full .tagline{display:block;font-family:"Indie Flower",cursive;color:#ff914d;font-size:1.15rem;line-height:1.1}
+.theme-full .wm{display:block;font-family:"Bebas Neue",var(--sans);font-size:1.55rem;line-height:1;color:#545454;letter-spacing:.02em}
+.theme-full .wm b,.theme-full .church-wm b{color:#ff914d;font-weight:400}
+
+/* header */
+.theme-full .site-header{background:#fff;border-bottom:3px solid #ff914d;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.theme-full .brand,.theme-full .brand:hover{color:#545454}
+.theme-full img.logo-mark{filter:brightness(0) saturate(100%) invert(62%) sepia(63%) saturate(1150%) hue-rotate(335deg) brightness(102%)}
+.theme-full .site-nav a{color:#545454}
+.theme-full .site-nav a:hover,.theme-full .site-nav a.active{background:#fff1e8;color:#3d3d3d}
+.theme-full .site-nav a.active{box-shadow:inset 0 -2px 0 #ff914d}
+.theme-full .menu-toggle{color:#545454;border-color:#ccc}
+@media (max-width:900px){
+  .theme-full .site-nav{background:#fff;border-bottom-color:#ff914d}
+  .theme-full .sub a{color:#545454}
+  .theme-full .sub a:hover{background:#fff1e8;color:#3d3d3d}
+}
+
+/* hero */
+.theme-full .hero-photo{background:linear-gradient(100deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.88) 42%,rgba(255,255,255,0) 72%),url("images/burwash-aerial.jpg") center 40%/cover;color:#3d3d3d}
+.theme-full .hero h1{color:#545454}
+.theme-full .hero p.lead{opacity:1}
+.theme-full .hero .eyebrow{color:#d9661c}
+.theme-full .eyebrow{color:#d9661c}
+.theme-full .btn{background:#ff914d;color:#fff;border-radius:999px}
+.theme-full .btn:hover{background:#ff7a2b;color:#fff}
+.theme-full .btn.ghost{background:#fff;color:#545454;border:2px solid #545454}
+.theme-full .btn.ghost:hover{background:#545454;color:#fff}
+@media (max-width:700px){.theme-full .hero-photo{background:linear-gradient(rgba(255,255,255,.9),rgba(255,255,255,.9)),url("images/burwash-aerial.jpg") center/cover}}
+
+/* page heads */
+.theme-full .page-head{background:#fff1e8;color:#3d3d3d;border-bottom:1px solid var(--line)}
+.theme-full .page-head h1{color:#545454}
+.theme-full .page-head p{opacity:1}
+.theme-full .page-head .church-wm{font-family:"Bebas Neue",var(--sans);font-size:clamp(2.8rem,6vw,4.6rem);line-height:.9;margin:0;color:#545454}
+.theme-full .page-head.has-wm .tagline{font-size:1.7rem;margin-top:.3rem}
+.theme-full .page-head.has-wm .eyebrow,.theme-full .page-head.has-wm h1{display:none}
+
+/* cards & blocks */
+.theme-full .card{border-radius:18px}
+.theme-full .card .place{color:#d9661c}
+.theme-full .card h3{font-size:1.7rem}
+.theme-full .feature .icon{background:#fff1e8;color:#ff914d}
+.theme-full .facts{border-left-color:#ff914d}
+.theme-full .week{border-top-color:#ff914d}
+.theme-full .week .t{color:#d9661c}
+.theme-full .vision{background:#545454}
+.theme-full .vision .eyebrow{color:#ffbd59}
+.theme-full .vision h2,.theme-full .vision h3{color:#fff}
+.theme-full .vision-grid div{border-top-color:#ffbd59}
+.theme-full .vision-grid div:nth-child(1){border-top-color:#99daff}
+.theme-full .vision-grid div:nth-child(2){border-top-color:#b1a1ed}
+.theme-full .vision-grid div:nth-child(3){border-top-color:#bee597}
+.theme-full .vision-grid div:nth-child(4){border-top-color:#ffbd59}
+.theme-full .alert{background:#545454}
+.theme-full .alert a{color:#ffbd59}
+
+/* footer */
+.theme-full .site-footer{background:#3d3d3d;border-top-color:#ff914d}
+.theme-full .site-footer h2{color:#fff;font-size:1.8rem}
+.theme-full .site-footer a:hover{color:#ffbd59}
