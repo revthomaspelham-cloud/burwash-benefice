@@ -44,4 +44,10 @@
 .theme-mix .find-title{font-family:"Oswald",var(--sans);font-weight:300;text-transform:uppercase;letter-spacing:.04em;font-size:1.5rem}
 .theme-mix .site-footer h2{font-size:1.25rem;color:#fff}
 .theme-mix .give-strip{background:#fff1e8}
-.theme-mix .wm .sep{margin-right:.35em;color:rgba(255,255,255,.6)}
+.theme-mix .wm .sep{color:rgba(255,255,255,.6)}
+@media (max-width:900px){
+  .theme-mix .wm .nm{display:block}
+  .theme-mix .wm .sep{display:none}
+  .theme-mix .wm{font-size:1.05rem;line-height:1.05}
+  .theme-mix .tagline{font-size:.95rem}
+}

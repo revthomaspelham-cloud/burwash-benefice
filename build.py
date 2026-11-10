@@ -107,7 +107,7 @@ LOGO_SVG = """<svg class="logo-mark" viewBox="0 0 40 48" aria-hidden="true"><pat
 
 THEME = "mix"  # live design. Alternatives kept for reference: None (original plum), "blend", "full"
 
-WORDMARK = '<span class="wm"><b>B</b>urwash<span class="sep">,</span> <b>B</b>urwash <b>W</b>eald<span class="sep">,</span> <b>E</b>tchingham</span>'
+WORDMARK = '<span class="wm"><span class="nm"><b>B</b>urwash<span class="sep">,</span></span> <span class="nm"><b>B</b>urwash <b>W</b>eald<span class="sep">,</span></span> <span class="nm"><b>E</b>tchingham</span></span>'
 TAGLINE = '<span class="tagline">Worship for Everybody</span>'
 
 
