@@ -73,6 +73,7 @@ CONTACT = {
     "phone_href": "+447856256174",
     "email": "revthomaspelham@gmail.com",
     "facebook": "https://www.facebook.com/profile.php?id=100087591101156",
+    "whatsapp": "https://chat.whatsapp.com/Hnf8zILV8Rk8XnDT7AK2zu",
 }
 
 
@@ -168,7 +169,7 @@ def page(meta, body):
       <p>The Rector, Revd Thomas Pelham</p>
       <p><a href="tel:{c['phone_href']}">{c['phone']}</a><br>
       <a href="mailto:{c['email']}">{c['email']}</a></p>
-      <p><a href="contact.html">Send us a message</a> &middot; <a href="{c['facebook']}">Facebook</a></p>
+      <p><a href="contact.html">Send us a message</a> &middot; <a href="{c['facebook']}">Facebook</a> &middot; <a href="{c['whatsapp']}">WhatsApp</a></p>
     </div>
     <div>
       <h2>Our churches</h2>
@@ -217,6 +218,10 @@ def redirect_stub(target):
 import datetime
 
 
+WA_BOX = ('<div class="wa-box"><div><h3>Weekly news on WhatsApp</h3><p>Join our WhatsApp community to get each week\'s services and events straight to your phone.</p></div>'
+          '<a class="btn wa-btn" href="https://chat.whatsapp.com/Hnf8zILV8Rk8XnDT7AK2zu">Join on WhatsApp</a></div>')
+
+
 def load_news():
     posts = []
     for f in sorted((SRC / "news").glob("*.html")):
@@ -250,11 +255,11 @@ def build(with_redirects=True, out=None):
     latest = "".join(news_card(m) for m in posts[:3])
     for p in sorted((SRC / "pages").glob("*.html")):
         meta, body = parse(p)
-        body = body.replace("<!--LATEST_NEWS-->", latest)
+        body = body.replace("<!--LATEST_NEWS-->", latest).replace("<!--WA_BOX-->", WA_BOX)
         (OUT / p.name).write_text(page(meta, body), encoding="utf-8")
     listing = "".join(news_card(m) for m in posts) or "<p>No news yet.</p>"
     news_body = ('<div class="page-head"><div class="wrap"><h1>News</h1><p>What\'s happening across our three churches.</p></div></div>'
-                 f'<section class="block"><div class="wrap"><div class="grid-3">{listing}</div></div></section>')
+                 f'<section class="block"><div class="wrap">{WA_BOX}<div class="grid-3">{listing}</div></div></section>')
     (OUT / "news.html").write_text(page({"title": "News", "nav": "news", "description": "News from the benefice of Burwash, Burwash Weald and Etchingham."}, news_body), encoding="utf-8")
     for m in posts:
         img = f'<div class="photo wide"><img src="{m["image"]}" alt=""></div>' if m.get("image") else ""

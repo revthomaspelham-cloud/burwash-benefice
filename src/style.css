@@ -242,3 +242,8 @@ a.inv:hover{box-shadow:0 10px 24px rgba(50,26,58,.1);color:var(--ink)}
 .inv .contact-line{margin:0;font-weight:600}
 .inv:target{box-shadow:0 0 0 3px var(--gold)}
 .involve-grid .inv:nth-child(7n+1){border-top-color:#99daff}.involve-grid .inv:nth-child(7n+2){border-top-color:#b1a1ed}.involve-grid .inv:nth-child(7n+3){border-top-color:#bee597}.involve-grid .inv:nth-child(7n+4){border-top-color:#ffbd59}
+.wa-box{display:flex;align-items:center;justify-content:space-between;gap:1rem 2rem;flex-wrap:wrap;background:#eaf7ef;border:1px solid #bfe3cb;border-radius:var(--radius);padding:1.1rem 1.4rem;margin:1.5rem 0}
+.wa-box h3{margin:0 0 .2rem;font-size:1.3rem}
+.wa-box p{margin:0}
+.theme-mix .btn.wa-btn,.btn.wa-btn{background:#25a244;color:#fff}
+.theme-mix .btn.wa-btn:hover,.btn.wa-btn:hover{background:#1e8a39;color:#fff}
