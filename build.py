@@ -42,10 +42,8 @@ NAV = [
         ("Bellringing", "bellringing.html", "bellringing"),
     ]),
     ("News", "news.html", "news", []),
-    ("Contact", "contact.html", "contact", [
-        ("Contact us", "contact.html", "contact"),
-        ("Safeguarding", "safeguarding.html", "safeguarding"),
-    ]),
+    ("Safeguarding", "safeguarding.html", "safeguarding", []),
+    ("Contact", "contact.html", "contact", []),
     ("Give", "give.html", "give", []),
 ]
 

@@ -50,7 +50,7 @@ p{margin:0 0 1em}
 .sub a:hover{background:var(--stone);color:var(--plum)}
 .sub a[aria-current]{color:var(--plum);font-weight:600}
 .menu-toggle{display:none;background:none;border:1px solid rgba(255,255,255,.5);color:var(--white);font:inherit;font-weight:600;padding:.4rem .9rem;border-radius:var(--radius);cursor:pointer}
-@media (max-width:900px){
+@media (max-width:1000px){
   .menu-toggle{display:block}
   .site-nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--plum-deep);padding:.5rem 1.25rem 1.25rem;border-bottom:3px solid var(--gold)}
   .site-nav.open{display:block}
@@ -232,4 +232,4 @@ a.opt:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.1);colo
 @media (max-width:560px){.event-list li{grid-template-columns:1fr;gap:.1rem}}
 /* nav fit */
 .site-nav a{white-space:nowrap}
-@media (max-width:1180px) and (min-width:901px){.site-nav a{padding:.5rem .55rem;font-size:.93rem}}
+@media (max-width:1320px) and (min-width:1001px){.site-nav a{padding:.5rem .5rem;font-size:.92rem}}
