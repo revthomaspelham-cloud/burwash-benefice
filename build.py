@@ -32,7 +32,7 @@ NAV = [
         ("Weddings", "weddings.html", "weddings"),
         ("Funerals", "funerals.html", "funerals"),
     ]),
-    ("Our churches", "index.html#churches", "churches", [
+    ("Churches", "index.html#churches", "churches", [
         ("St Bartholomew's, Burwash", "burwash.html", "burwash"),
         ("St Philip's, Burwash Weald", "burwash-weald.html", "burwash-weald"),
         ("Etchingham", "etchingham.html", "etchingham"),
@@ -41,7 +41,11 @@ NAV = [
         ("Choir", "choir.html", "choir"),
         ("Bellringing", "bellringing.html", "bellringing"),
     ]),
-    ("Safeguarding", "safeguarding.html", "safeguarding", []),
+    ("News", "news.html", "news", []),
+    ("Contact", "contact.html", "contact", [
+        ("Contact us", "contact.html", "contact"),
+        ("Safeguarding", "safeguarding.html", "safeguarding"),
+    ]),
     ("Give", "give.html", "give", []),
 ]
 
@@ -159,7 +163,7 @@ def page(meta, body):
       <p>The Rector, Revd Thomas Pelham</p>
       <p><a href="tel:{c['phone_href']}">{c['phone']}</a><br>
       <a href="mailto:{c['email']}">{c['email']}</a></p>
-      <p><a href="{c['facebook']}">Follow us on Facebook</a></p>
+      <p><a href="contact.html">Send us a message</a> &middot; <a href="{c['facebook']}">Facebook</a></p>
     </div>
     <div>
       <h2>Our churches</h2>
@@ -205,15 +209,53 @@ def redirect_stub(target):
 """
 
 
+import datetime
+
+
+def load_news():
+    posts = []
+    for f in sorted((SRC / "news").glob("*.html")):
+        meta, body = parse(f)
+        meta["slug"] = "news-" + f.stem + ".html"
+        meta["body"] = body
+        posts.append(meta)
+    posts.sort(key=lambda m: (m["date"], m["slug"]), reverse=True)
+    return posts
+
+
+def nice_date(d):
+    dt = datetime.date.fromisoformat(d)
+    return f"{dt.day} {dt.strftime('%B %Y')}"
+
+
+def news_card(m):
+    img = f'<div class="photo"><img src="{m["image"]}" alt="" loading="lazy"></div>' if m.get("image") else ""
+    return (f'<a class="card news-card" href="{m["slug"]}">{img}<div class="body">'
+            f'<p class="place">{nice_date(m["date"])}</p><h3>{html.escape(m["title"])}</h3>'
+            f'<p>{html.escape(m["summary"])}</p><span class="read">Read more &rarr;</span></div></a>')
+
+
 def build(with_redirects=True, out=None):
     global OUT
     if out: OUT = out
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir(parents=True)
+    posts = load_news() if (SRC / "news").exists() else []
+    latest = "".join(news_card(m) for m in posts[:3])
     for p in sorted((SRC / "pages").glob("*.html")):
         meta, body = parse(p)
+        body = body.replace("<!--LATEST_NEWS-->", latest)
         (OUT / p.name).write_text(page(meta, body), encoding="utf-8")
+    listing = "".join(news_card(m) for m in posts) or "<p>No news yet.</p>"
+    news_body = ('<div class="page-head"><div class="wrap"><h1>News</h1><p>What\'s happening across our three churches.</p></div></div>'
+                 f'<section class="block"><div class="wrap"><div class="grid-3">{listing}</div></div></section>')
+    (OUT / "news.html").write_text(page({"title": "News", "nav": "news", "description": "News from the benefice of Burwash, Burwash Weald and Etchingham."}, news_body), encoding="utf-8")
+    for m in posts:
+        img = f'<div class="photo wide"><img src="{m["image"]}" alt=""></div>' if m.get("image") else ""
+        body = (f'<div class="page-head"><div class="wrap"><p class="eyebrow">{nice_date(m["date"])}</p><h1>{html.escape(m["title"])}</h1></div></div>'
+                f'<section class="block"><div class="wrap narrow prose">{img}{m["body"]}<p style="margin-top:2rem"><a href="news.html">&larr; All news</a></p></div></section>')
+        (OUT / m["slug"]).write_text(page({"title": m["title"], "nav": "news", "description": m["summary"]}, body), encoding="utf-8")
     shutil.copy(SRC / "style.css", OUT / "style.css")
     if THEME:
         shutil.copy(SRC / f"theme-{THEME}.css", OUT / f"theme-{THEME}.css")

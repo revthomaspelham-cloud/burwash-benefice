@@ -2,6 +2,8 @@ title: Home
 nav: home
 description: Welcome to the Church of England benefice of Burwash, Burwash Weald and Etchingham in East Sussex: three churches, one family.
 ---
+<div class="notice" data-until="2026-12-07"><div class="wrap"><strong>Sunday 6 December:</strong> one united benefice service at 10.30am at Etchingham, with the Dean of Chichester. <a href="news-2026-11-10-united-service-6-december.html">Find out more</a></div></div>
+
 <section class="hero hero-photo">
   <div class="wrap">
     <p class="eyebrow">Church of England · East Sussex</p>
@@ -78,6 +80,13 @@ description: Welcome to the Church of England benefice of Burwash, Burwash Weald
   </div>
 </section>
 
+<section class="block" id="news">
+  <div class="wrap">
+    <div class="section-head"><h2>Latest news</h2><a href="news.html">All news &rarr;</a></div>
+    <div class="grid-3"><!--LATEST_NEWS--></div>
+  </div>
+</section>
+
 <section class="give-strip">
   <div class="wrap">
     <div><h2>Support our churches</h2><p>Give regularly to St Bartholomew's, St Philip's or Etchingham through the Parish Giving Scheme.</p></div>
@@ -112,3 +121,4 @@ description: Welcome to the Church of England benefice of Burwash, Burwash Weald
     </div>
   </div>
 </section>
+<script>document.querySelectorAll('[data-until]').forEach(function(el){if(new Date()>=new Date(el.dataset.until))el.remove();});</script>

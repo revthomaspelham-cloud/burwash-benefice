@@ -1,0 +1,63 @@
+title: Contact us
+nav: contact
+description: Get in touch with the Rector of Burwash, Burwash Weald and Etchingham.
+---
+<div class="page-head"><div class="wrap"><h1>Contact us</h1><p>We'd love to hear from you, whether it's about a baptism, wedding or funeral, a question about faith, or anything else.</p></div></div>
+<section class="block">
+  <div class="wrap grid-2 contact-grid">
+    <div>
+      <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <input type="hidden" name="access_key" value="3e699310-a25a-4522-a8a0-903934188ed6">
+        <input type="hidden" name="from_name" value="Benefice website">
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+        <label for="cf-to">Who would you like to contact?</label>
+        <select id="cf-to" name="to" required>
+          <option value="rector" data-key="3e699310-a25a-4522-a8a0-903934188ed6">The Rector (Revd Thomas Pelham)</option>
+        </select>
+        <label for="cf-name">Your name</label>
+        <input id="cf-name" name="name" type="text" required autocomplete="name">
+        <label for="cf-email">Your email</label>
+        <input id="cf-email" name="email" type="email" required autocomplete="email">
+        <label for="cf-phone">Phone <span class="opt-label">(optional)</span></label>
+        <input id="cf-phone" name="phone" type="tel" autocomplete="tel">
+        <label for="cf-msg">Message</label>
+        <textarea id="cf-msg" name="message" rows="6" required></textarea>
+        <button class="btn" type="submit">Send message</button>
+        <p class="form-status" id="cf-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+    <div>
+      <div class="facts" style="margin-top:0">
+        <h3>The Rector</h3>
+        <p>Revd Thomas Pelham<br>
+        <a href="tel:+447856256174">07856 256 174</a><br>
+        <a href="mailto:revthomaspelham@gmail.com">revthomaspelham@gmail.com</a></p>
+        <p class="small">Fridays are the Rector's day off.</p>
+      </div>
+      <div class="alert"><strong>Safeguarding:</strong> if someone is in immediate danger, call 999. To raise a concern, please phone your <a href="safeguarding.html">Parish Safeguarding Officer</a>.</div>
+      <p><a href="https://www.facebook.com/profile.php?id=100087591101156">Follow us on Facebook</a> for news and updates.</p>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var f=document.getElementById('contact-form'), st=document.getElementById('cf-status'), sel=document.getElementById('cf-to');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.checkValidity()){ st.textContent='Please fill in your name, email and message.'; st.className='form-status err'; f.reportValidity(); return; }
+    var opt=sel.options[sel.selectedIndex];
+    f.access_key.value=opt.getAttribute('data-key');
+    var data=new FormData(f);
+    data.append('subject','Website message for '+opt.text+' from '+(data.get('name')||''));
+    var btn=f.querySelector('button'); btn.disabled=true; st.textContent='Sending…'; st.className='form-status';
+    fetch(f.action,{method:'POST',body:data,headers:{'Accept':'application/json'}})
+      .then(function(r){return r.json();})
+      .then(function(j){
+        if(j.success){ f.reset(); st.textContent='Thank you. Your message has been sent, and we will be in touch soon.'; st.className='form-status ok'; }
+        else { throw new Error(j.message||'error'); }
+      })
+      .catch(function(){ st.innerHTML='Sorry, something went wrong. Please email <a href="mailto:revthomaspelham@gmail.com">revthomaspelham@gmail.com</a> instead.'; st.className='form-status err'; })
+      .finally(function(){ btn.disabled=false; });
+  });
+})();
+</script>
