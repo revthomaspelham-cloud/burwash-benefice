@@ -116,8 +116,8 @@ def page(meta, body):
     full_title = SITE_NAME if meta.get("nav") == "home" else f"{title} | {SITE_NAME}"
     desc = meta.get("description", "Church of England parishes of Burwash, Burwash Weald and Etchingham, East Sussex.")
     c = CONTACT
-    theme_css = f'\n<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">\n<link rel="stylesheet" href="theme-{THEME}.css">' if THEME else ""
-    if THEME == "full":
+    theme_css = f'\n<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..500&display=swap" rel="stylesheet">\n<link rel="stylesheet" href="theme-{THEME}.css">' if THEME else ""
+    if THEME in ("full", "mix"):
         brand_text = f'<span>{WORDMARK}{TAGLINE}</span>'
     elif THEME == "blend":
         brand_text = f'<span><span class="brand-small">The Benefice of</span><span class="brand-big">Burwash, Burwash Weald &amp; Etchingham</span>{TAGLINE}</span>'
