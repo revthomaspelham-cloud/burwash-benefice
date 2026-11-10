@@ -24,7 +24,7 @@
   </div>
 </header>
 <main id="main">
-<div class="notice" data-until="2026-12-07"><div class="wrap"><strong>Sunday 6 December:</strong> United Benefice service at 10.30am at Etchingham, with the Dean of Chichester. <a href="news-2026-11-10-united-service-6-december.html">Find out more</a></div></div>
+<div class="notice news-bar" aria-live="polite"><div class="wrap"><div class="nb-items"><p class="nb-item" data-until="2026-12-02"><strong>28 November to 2 December:</strong> Christmas Tree Festival at St Bartholomew's, with evening entertainment on Saturday 28th from 6pm. <a href="news-2026-11-10-christmas-tree-festival.html">Find out more</a></p><p class="nb-item" data-until="2026-12-06"><strong>Sunday 6 December:</strong> United Benefice service at 10.30am at Etchingham, with the Dean of Chichester. <a href="news-2026-11-10-united-service-6-december.html">Find out more</a></p><p class="nb-item" data-until="2026-12-26"><strong>Advent &amp; Christmas:</strong> Christingles, crib services and carols by candlelight across our three churches. <a href="news-2026-11-10-advent-and-christmas.html">Find out more</a></p><p class="nb-item" data-until="2027-02-07"><strong>Sunday 7 February:</strong> Candlemas &lsquo;Come and Sing&rsquo;. Rehearsal 2pm, service 4.30pm. Everyone welcome. <a href="news-2026-11-10-candlemas-come-and-sing.html">Find out more</a></p></div></div></div>
 
 <section class="hero hero-photo">
   <div class="wrap">
@@ -105,7 +105,7 @@
 <section class="block" id="news">
   <div class="wrap">
     <div class="section-head"><h2>Latest news</h2><a href="news.html">All news &rarr;</a></div>
-    <div class="grid-3"><a class="card news-card" href="news-2026-11-10-united-service-6-december.html"><div class="photo"><img src="images/etchingham-wide.jpg" alt="" loading="lazy"></div><div class="body"><p class="place">10 November 2026</p><h3>United benefice service on 6 December</h3><p>On Sunday 6 December we&#x27;ll gather as one benefice at Etchingham for the final celebration of the church&#x27;s 650th anniversary, with the Dean of Chichester.</p><span class="read">Read more &rarr;</span></div></a><a class="card news-card" href="news-2026-11-10-candlemas-come-and-sing.html"><div class="photo"><img src="images/choir-remembrance.jpg" alt="" loading="lazy"></div><div class="body"><p class="place">10 November 2026</p><h3>Candlemas &#x27;Come and Sing&#x27;: Sunday 7 February</h3><p>Join the choir for our Candlemas service on Sunday 7 February. Everyone is welcome to come and sing, followed by tea at the Rectory.</p><span class="read">Read more &rarr;</span></div></a><a class="card news-card" href="news-2026-11-10-advent-and-christmas.html"><div class="photo"><img src="images/weald-view.jpg" alt="" loading="lazy"></div><div class="body"><p class="place">10 November 2026</p><h3>Advent and Christmas services</h3><p>Christingles, crib services and carols by candlelight across our three churches this Advent and Christmas.</p><span class="read">Read more &rarr;</span></div></a></div>
+    <div class="grid-3"><a class="card news-card" data-until="2026-12-06" href="news-2026-11-10-united-service-6-december.html"><div class="photo"><img src="images/etchingham-wide.jpg" alt="" loading="lazy"></div><div class="body"><p class="place">10 November 2026</p><h3>United benefice service on 6 December</h3><p>On Sunday 6 December we&#x27;ll gather as one benefice at Etchingham for the final celebration of the church&#x27;s 650th anniversary, with the Dean of Chichester.</p><span class="read">Read more &rarr;</span></div></a><a class="card news-card" data-until="2027-02-07" href="news-2026-11-10-candlemas-come-and-sing.html"><div class="photo"><img src="images/choir-remembrance.jpg" alt="" loading="lazy"></div><div class="body"><p class="place">10 November 2026</p><h3>Candlemas &#x27;Come and Sing&#x27;: Sunday 7 February</h3><p>Join the choir for our Candlemas service on Sunday 7 February. Everyone is welcome to come and sing, followed by tea at the Rectory.</p><span class="read">Read more &rarr;</span></div></a><a class="card news-card" data-until="2026-12-26" href="news-2026-11-10-advent-and-christmas.html"><div class="photo"><img src="images/weald-view.jpg" alt="" loading="lazy"></div><div class="body"><p class="place">10 November 2026</p><h3>Advent and Christmas services</h3><p>Christingles, crib services and carols by candlelight across our three churches this Advent and Christmas.</p><span class="read">Read more &rarr;</span></div></a><a class="card news-card" data-until="2026-12-02" href="news-2026-11-10-christmas-tree-festival.html"><div class="photo"><img src="images/burwash-aerial.jpg" alt="" loading="lazy"></div><div class="body"><p class="place">9 November 2026</p><h3>Christmas Tree Festival at St Bartholomew&#x27;s</h3><p>St Bartholomew&#x27;s will be filled with Christmas trees from Saturday 28 November to Wednesday 2 December, with evening entertainment on the opening night.</p><span class="read">Read more &rarr;</span></div></a></div>
     <div class="wa-box"><div><h3>Weekly news on WhatsApp</h3><p>Join our WhatsApp community to get each week's services and events straight to your phone.</p></div><a class="btn wa-btn" href="https://chat.whatsapp.com/Hnf8zILV8Rk8XnDT7AK2zu">Join on WhatsApp</a></div>
   </div>
 </section>
@@ -144,7 +144,6 @@
     </div>
   </div>
 </section>
-<script>document.querySelectorAll('[data-until]').forEach(function(el){if(new Date()>=new Date(el.dataset.until))el.remove();});</script>
 <script>
 (function(){
   // Seasonal banner: snow from Advent Sunday until Epiphany (6 Jan); Etchingham March-April; summer view May-September; autumn bench view otherwise
@@ -197,6 +196,14 @@
 <script>
 (function(){var b=document.querySelector('.menu-toggle'),n=document.getElementById('site-nav');
 b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);});})();
+// Hide news whose 'until' date has passed (shown until the end of that day)
+(function(){var t=new Date();t.setHours(0,0,0,0);
+document.querySelectorAll('[data-until]').forEach(function(el){var d=new Date(el.dataset.until+'T00:00:00');if(d<t)el.remove();});
+var bar=document.querySelector('.news-bar');if(!bar)return;var it=bar.querySelectorAll('.nb-item');
+if(!it.length){bar.remove();return;}var i=0,paused=false;it[0].classList.add('on');if(it.length<2)return;
+bar.addEventListener('mouseenter',function(){paused=true;});bar.addEventListener('mouseleave',function(){paused=false;});
+bar.addEventListener('focusin',function(){paused=true;});bar.addEventListener('focusout',function(){paused=false;});
+setInterval(function(){if(paused)return;it[i].classList.remove('on');i=(i+1)%it.length;it[i].classList.add('on');},6000);})();
 </script>
 </body>
 </html>

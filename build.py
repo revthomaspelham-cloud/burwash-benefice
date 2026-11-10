@@ -199,6 +199,14 @@ def page(meta, body):
 <script>
 (function(){{var b=document.querySelector('.menu-toggle'),n=document.getElementById('site-nav');
 b.addEventListener('click',function(){{var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);}});}})();
+// Hide news whose 'until' date has passed (shown until the end of that day)
+(function(){{var t=new Date();t.setHours(0,0,0,0);
+document.querySelectorAll('[data-until]').forEach(function(el){{var d=new Date(el.dataset.until+'T00:00:00');if(d<t)el.remove();}});
+var bar=document.querySelector('.news-bar');if(!bar)return;var it=bar.querySelectorAll('.nb-item');
+if(!it.length){{bar.remove();return;}}var i=0,paused=false;it[0].classList.add('on');if(it.length<2)return;
+bar.addEventListener('mouseenter',function(){{paused=true;}});bar.addEventListener('mouseleave',function(){{paused=false;}});
+bar.addEventListener('focusin',function(){{paused=true;}});bar.addEventListener('focusout',function(){{paused=false;}});
+setInterval(function(){{if(paused)return;it[i].classList.remove('on');i=(i+1)%it.length;it[i].classList.add('on');}},6000);}})();
 </script>
 </body>
 </html>
@@ -238,9 +246,27 @@ def nice_date(d):
     return f"{dt.day} {dt.strftime('%B %Y')}"
 
 
+def is_current(m):
+    """A post is current until the end of its 'until' date (no date = always current)."""
+    return not m.get("until") or datetime.date.fromisoformat(m["until"]) >= datetime.date.today()
+
+
+def until_attr(m):
+    return f' data-until="{m["until"]}"' if m.get("until") else ""
+
+
+def news_bar(posts):
+    items = [m for m in posts if is_current(m) and m.get("headline")]
+    items.sort(key=lambda m: m.get("until") or "9999")
+    if not items:
+        return ""
+    lis = "".join(f'<p class="nb-item"{until_attr(m)}>{m["headline"]} <a href="{m["slug"]}">Find out more</a></p>' for m in items)
+    return f'<div class="notice news-bar" aria-live="polite"><div class="wrap"><div class="nb-items">{lis}</div></div></div>'
+
+
 def news_card(m):
     img = f'<div class="photo"><img src="{m["image"]}" alt="" loading="lazy"></div>' if m.get("image") else ""
-    return (f'<a class="card news-card" href="{m["slug"]}">{img}<div class="body">'
+    return (f'<a class="card news-card"{until_attr(m)} href="{m["slug"]}">{img}<div class="body">'
             f'<p class="place">{nice_date(m["date"])}</p><h3>{html.escape(m["title"])}</h3>'
             f'<p>{html.escape(m["summary"])}</p><span class="read">Read more &rarr;</span></div></a>')
 
@@ -252,12 +278,13 @@ def build(with_redirects=True, out=None):
         shutil.rmtree(OUT)
     OUT.mkdir(parents=True)
     posts = load_news() if (SRC / "news").exists() else []
-    latest = "".join(news_card(m) for m in posts[:3])
+    current = [m for m in posts if is_current(m)]
+    latest = "".join(news_card(m) for m in current[:6])
     for p in sorted((SRC / "pages").glob("*.html")):
         meta, body = parse(p)
-        body = body.replace("<!--LATEST_NEWS-->", latest).replace("<!--WA_BOX-->", WA_BOX)
+        body = body.replace("<!--LATEST_NEWS-->", latest).replace("<!--NEWS_BAR-->", news_bar(posts)).replace("<!--WA_BOX-->", WA_BOX)
         (OUT / p.name).write_text(page(meta, body), encoding="utf-8")
-    listing = "".join(news_card(m) for m in posts) or "<p>No news yet.</p>"
+    listing = "".join(news_card(m) for m in current) or "<p>No news at the moment.</p>"
     news_body = ('<div class="page-head"><div class="wrap"><h1>News</h1><p>What\'s happening across our three churches.</p></div></div>'
                  f'<section class="block"><div class="wrap">{WA_BOX}<div class="grid-3">{listing}</div></div></section>')
     (OUT / "news.html").write_text(page({"title": "News", "nav": "news", "description": "News from the benefice of Burwash, Burwash Weald and Etchingham."}, news_body), encoding="utf-8")

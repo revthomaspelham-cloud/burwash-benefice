@@ -253,3 +253,8 @@ a.inv:hover{box-shadow:0 10px 24px rgba(50,26,58,.1);color:var(--ink)}
 .expect{align-items:start}
 .inv .exp-photo{margin:-1.25rem -1.4rem 1rem}
 .involve-grid{align-items:start}
+
+.news-bar .nb-item{display:none;margin:0}
+.news-bar .nb-item.on{display:block;animation:nbfade .5s ease}
+@keyframes nbfade{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.news-bar .nb-item.on{animation:none}}

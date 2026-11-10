@@ -71,6 +71,14 @@
 <script>
 (function(){var b=document.querySelector('.menu-toggle'),n=document.getElementById('site-nav');
 b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);});})();
+// Hide news whose 'until' date has passed (shown until the end of that day)
+(function(){var t=new Date();t.setHours(0,0,0,0);
+document.querySelectorAll('[data-until]').forEach(function(el){var d=new Date(el.dataset.until+'T00:00:00');if(d<t)el.remove();});
+var bar=document.querySelector('.news-bar');if(!bar)return;var it=bar.querySelectorAll('.nb-item');
+if(!it.length){bar.remove();return;}var i=0,paused=false;it[0].classList.add('on');if(it.length<2)return;
+bar.addEventListener('mouseenter',function(){paused=true;});bar.addEventListener('mouseleave',function(){paused=false;});
+bar.addEventListener('focusin',function(){paused=true;});bar.addEventListener('focusout',function(){paused=false;});
+setInterval(function(){if(paused)return;it[i].classList.remove('on');i=(i+1)%it.length;it[i].classList.add('on');},6000);})();
 </script>
 </body>
 </html>
