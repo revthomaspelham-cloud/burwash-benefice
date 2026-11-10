@@ -224,7 +224,7 @@ def build(with_redirects=True, out=None):
             d = OUT / old
             d.mkdir()
             (d / "index.html").write_text(redirect_stub(new), encoding="utf-8")
-        # CNAME is added only once DNS is switched over (see README)
+        (OUT / "CNAME").write_text(DOMAIN + "\n")
         (OUT / ".nojekyll").write_text("")
     print("Built", len(list(OUT.glob("*.html"))), "pages into", OUT)
 
