@@ -37,9 +37,15 @@ NAV = [
         ("St Philip's, Burwash Weald", "burwash-weald.html", "burwash-weald"),
         ("Etchingham", "etchingham.html", "etchingham"),
     ]),
-    ("Get involved", "choir.html", "activities", [
+    ("Get involved", "get-involved.html", "activities", [
+        ("All the ways to get involved", "get-involved.html", "activities"),
         ("Choir", "choir.html", "choir"),
         ("Bellringing", "bellringing.html", "bellringing"),
+        ("Sidespeople", "get-involved.html#sidespeople", "sidespeople"),
+        ("Readers", "get-involved.html#readers", "readers"),
+        ("3Cs café", "get-involved.html#3cs", "3cs"),
+        ("Pastoral visiting", "get-involved.html#pastoral", "pastoral"),
+        ("House groups", "get-involved.html#house-groups", "house-groups"),
     ]),
     ("News", "news.html", "news", []),
     ("Safeguarding", "safeguarding.html", "safeguarding", []),

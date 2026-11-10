@@ -233,3 +233,12 @@ a.opt:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.1);colo
 /* nav fit */
 .site-nav a{white-space:nowrap}
 @media (max-width:1320px) and (min-width:1001px){.site-nav a{padding:.5rem .5rem;font-size:.92rem}}
+/* Get involved */
+.involve-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem}
+.inv{display:block;background:var(--white);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:var(--radius);padding:1.25rem 1.4rem;color:var(--ink);text-decoration:none;scroll-margin-top:100px}
+a.inv:hover{box-shadow:0 10px 24px rgba(50,26,58,.1);color:var(--ink)}
+.inv .when{font-weight:600;color:var(--ink-soft);font-size:.95rem;margin-bottom:.5rem}
+.inv .more{font-weight:600;color:var(--plum)}
+.inv .contact-line{margin:0;font-weight:600}
+.inv:target{box-shadow:0 0 0 3px var(--gold)}
+.involve-grid .inv:nth-child(7n+1){border-top-color:#99daff}.involve-grid .inv:nth-child(7n+2){border-top-color:#b1a1ed}.involve-grid .inv:nth-child(7n+3){border-top-color:#bee597}.involve-grid .inv:nth-child(7n+4){border-top-color:#ffbd59}
