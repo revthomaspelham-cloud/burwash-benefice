@@ -124,3 +124,11 @@ ul.plain li{margin-bottom:.4rem}
 .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem}
 .hero .wrap{position:relative;z-index:1}
 @media (max-width:700px){.hero::after{width:180px;height:220px;right:-50px;opacity:.5}}
+.hero-photo{background:linear-gradient(100deg,rgba(50,26,58,.92) 0%,rgba(50,26,58,.75) 45%,rgba(50,26,58,.25) 100%),url("images/burwash-aerial.jpg") center 40%/cover;padding:6rem 0 5.5rem}
+.hero-photo::after{display:none}
+.photo.tall{aspect-ratio:3/4;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;padding:0}
+.photo.wide{overflow:hidden;padding:0}
+.card .photo{padding:0}
+@media (max-width:700px){.hero-photo{background:linear-gradient(rgba(50,26,58,.82),rgba(50,26,58,.82)),url("images/burwash-aerial.jpg") center/cover}}
+.photo{position:relative;overflow:hidden}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
