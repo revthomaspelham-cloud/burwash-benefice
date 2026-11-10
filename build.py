@@ -119,12 +119,14 @@ def page(meta, body):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="index.html">{LOGO_SVG}<span><span class="brand-small">The Benefice of</span><span class="brand-big">Burwash, Burwash Weald &amp; Etchingham</span></span></a>
+    <a class="brand" href="index.html"><img class="logo-mark" src="images/crossburst.png" alt="" width="40" height="50"><span><span class="brand-small">The Benefice of</span><span class="brand-big">Burwash, Burwash Weald &amp; Etchingham</span></span></a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav id="site-nav" class="site-nav" aria-label="Main"><ul>{render_nav(meta.get("nav", ""))}</ul></nav>
   </div>
@@ -152,7 +154,8 @@ def page(meta, body):
     <div>
       <h2>Safeguarding</h2>
       <p>If you are worried about a child or adult, see our <a href="safeguarding.html">safeguarding page</a> for who to contact.</p>
-      <p class="small">Part of the Church of England, Diocese of Chichester.</p>
+      <a class="cofe" href="https://www.churchofengland.org/"><img src="images/cofe-white.png" alt="The Church of England" width="90"></a>
+      <p class="small">Part of the Church of England, in the <a href="https://www.chichester.anglican.org/">Diocese of Chichester</a>.</p>
     </div>
   </div>
 </footer>
