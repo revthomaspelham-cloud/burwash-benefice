@@ -214,6 +214,13 @@ def _page(meta, body):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?{fonts}&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">{theme_css}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{html.escape(SITE_NAME)}">
+<meta property="og:title" content="{html.escape(title if meta.get("nav") != "home" else SITE_NAME)}">
+<meta property="og:description" content="{html.escape(desc)}">
+<meta property="og:url" content="https://{DOMAIN}/{meta.get("url", "")}">
+<meta property="og:image" content="https://{DOMAIN}/{meta.get("share_image") or meta.get("image") or "images/weald-view.jpg"}">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 </head>
@@ -260,6 +267,7 @@ def _page(meta, body):
       <p>If you are worried about a child or adult, see our <a href="safeguarding.html">safeguarding page</a> for who to contact.</p>
       <a class="cofe" href="https://www.churchofengland.org/"><img src="images/cofe-white.png" alt="The Church of England" width="90"></a>
       <p class="small">Part of the Church of England, in the <a href="https://www.chichester.anglican.org/">Diocese of Chichester</a>.</p>
+      <p class="small">Each parish is run by its Parochial Church Council. St Bartholomew's PCC is a registered charity (no. 1133028); the PCCs of St Philip's and Etchingham are excepted charities.</p>
     </div>
   </div>
 </footer>
@@ -415,17 +423,22 @@ def build(with_redirects=True, out=None):
     latest = "".join(news_card(m) for m in current[:3])
     for p in sorted(list((SRC / "pages").glob("*.html")) + list((SRC / "pages").glob("*.md"))):
         meta, body = parse(p)
+        meta["url"] = "" if p.stem == "index" else p.stem + ".html"
         body = body.replace("<!--LATEST_NEWS-->", latest).replace("<!--NEWS_BAR-->", news_bar(posts)).replace("<!--WA_BOX-->", WA_BOX)
         (OUT / (p.stem + ".html")).write_text(page(meta, body), encoding="utf-8")
     listing = "".join(news_card(m) for m in current) or "<p>No news at the moment.</p>"
     news_body = ('<div class="page-head"><div class="wrap"><h1>News</h1><p>What\'s happening across our three churches.</p></div></div>'
                  f'<section class="block"><div class="wrap">{WA_BOX}<div class="grid-3">{listing}</div></div></section>')
-    (OUT / "news.html").write_text(page({"title": "News", "nav": "news", "description": "News from the benefice of Burwash, Burwash Weald and Etchingham."}, news_body), encoding="utf-8")
+    (OUT / "news.html").write_text(page({"title": "News", "nav": "news", "url": "news.html", "description": "News from the benefice of Burwash, Burwash Weald and Etchingham."}, news_body), encoding="utf-8")
     for m in posts:
         img = f'<div class="photo wide"><img src="{m["image"]}" alt=""></div>' if m.get("image") else ""
         body = (f'<div class="page-head"><div class="wrap"><p class="eyebrow">{nice_date(m["date"])}</p><h1>{html.escape(m["title"])}</h1></div></div>'
                 f'<section class="block"><div class="wrap narrow prose">{img}{m["body"]}<p style="margin-top:2rem"><a href="news.html">&larr; All news</a></p></div></section>')
-        (OUT / m["slug"]).write_text(page({"title": m["title"], "nav": "news", "description": m["summary"]}, body), encoding="utf-8")
+        (OUT / m["slug"]).write_text(page({"title": m["title"], "nav": "news", "description": m["summary"], "url": m["slug"], "image": m.get("image", "")}, body), encoding="utf-8")
+    nf = ('<div class="page-head"><div class="wrap"><h1>Page not found</h1><p>Sorry, we can\'t find that page.</p></div></div>'
+          '<section class="block"><div class="wrap narrow prose"><p>It may have moved when we updated our website. Try our '
+          '<a href="index.html">home page</a>, <a href="services.html">service times</a> or <a href="contact.html">contact us</a>.</p></div></section>')
+    (OUT / "404.html").write_text(page({"title": "Page not found", "url": "404.html"}, nf).replace("<head>", '<head>\n<base href="/">', 1), encoding="utf-8")
     shutil.copy(SRC / "style.css", OUT / "style.css")
     if THEME:
         shutil.copy(SRC / f"theme-{THEME}.css", OUT / f"theme-{THEME}.css")

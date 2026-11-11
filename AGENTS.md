@@ -127,6 +127,15 @@ For a refactor with no intended visual change, copy `docs/` before and diff afte
 - Christmas Eve and Christmas Day service times are still to be added when supplied.
 - Parish safeguarding officers may be added to the contact form once they agree.
 
+## To do (agreed with Tom for later; draft wording and check with him first)
+
+- Churchyards: burials, interring ashes and memorials (a short paragraph on the funerals page).
+- Exploring faith: a short section for people wondering about faith, confirmation or adult baptism.
+- Prayer requests: an invitation to send one, e.g. on the Contact page.
+- Church schools: links to Burwash and Etchingham CE primary schools from the About page.
+- Confirm the footer charity line: St Bartholomew's PCC is registered (1133028); St Philip's and
+  Etchingham PCCs were not found on the register and are described as excepted.
+
 ## Related things outside this repo
 
 - A weekly scheduled assistant task (Mondays, 07:45 UK time) suggests news items
