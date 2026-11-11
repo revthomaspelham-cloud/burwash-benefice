@@ -261,3 +261,9 @@ a.inv:hover{box-shadow:0 10px 24px rgba(50,26,58,.1);color:var(--ink)}
 
 .rector-photo{float:right;width:190px;margin:0 0 1rem 1.5rem;border-radius:var(--radius);border:1px solid var(--line);box-shadow:0 6px 18px rgba(50,26,58,.18)}
 @media (max-width:520px){.rector-photo{float:none;display:block;margin:0 auto 1rem}}
+.this-sunday{max-width:560px;margin-bottom:2rem}
+.this-sunday h2{margin-bottom:.75rem}
+.this-sunday-card h3{font-size:1.1rem}
+.pattern-details{margin:1rem 0 .5rem}
+.pattern-details[open] .pattern{margin-top:1.5rem}
+.this-sunday .small{margin-top:.6rem}

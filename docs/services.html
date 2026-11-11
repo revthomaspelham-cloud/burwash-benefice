@@ -26,10 +26,15 @@
 <div class="page-head"><div class="wrap"><h1>Services &amp; events</h1><p>We follow a monthly cycle of services across all three churches. Families and children are welcome at any of them.</p></div></div>
 <section class="block">
   <div class="wrap">
-    <h2>Our usual Sunday pattern</h2>
-    <p>This is our normal monthly pattern. At festivals and special occasions things change, so it's always worth checking the <a href="#calendar">calendar</a> below.</p>
+    <div class="this-sunday" id="this-sunday" hidden>
+      <h2 id="this-sunday-title">This Sunday</h2>
+      <div class="week this-sunday-card"></div>
+      <p class="small">At festivals and special services this can change, so please check our <a href="news.html">news</a> and the <a href="#calendar">calendar</a> below.</p>
+    </div>
+    <details class="find-details pattern-details" id="pattern">
+      <summary><span class="find-title">Our full monthly pattern</span><span class="find-sub">Which services happen on the 1st, 2nd, 3rd, 4th and 5th Sundays of the month.</span><span class="find-toggle" aria-hidden="true"></span></summary>
     <div class="pattern">
-      <div class="week">
+      <div class="week" data-week="1">
         <h3>1st Sunday</h3>
         <ul>
           <li><span class="t">9.30am</span><span>BCP Holy Communion<br><em>Etchingham</em></span></li>
@@ -38,7 +43,7 @@
           <li><span class="t">4.30pm</span><span>BCP Evensong<br><em>St Bartholomew's, Burwash</em></span></li>
         </ul>
       </div>
-      <div class="week">
+      <div class="week" data-week="2">
         <h3>2nd Sunday</h3>
         <ul>
           <li><span class="t">9.30am</span><span>Morning Prayer<br><em>St Bartholomew's, Burwash</em></span></li>
@@ -46,7 +51,7 @@
           <li><span class="t">4.30pm</span><span>Praise@thePavilion <em>(Burwash Common Pavilion)</em> or Candlelit Compline <em>(Etchingham)</em>, in alternate months</span></li>
         </ul>
       </div>
-      <div class="week">
+      <div class="week" data-week="3">
         <h3>3rd Sunday</h3>
         <ul>
           <li><span class="t">9.30am</span><span>BCP Holy Communion (said)<br><em>St Bartholomew's, Burwash</em></span></li>
@@ -55,7 +60,7 @@
           <li><span class="t">4.30pm</span><span>Evening Prayer<br><em>St Bartholomew's, Burwash</em></span></li>
         </ul>
       </div>
-      <div class="week">
+      <div class="week" data-week="4">
         <h3>4th Sunday</h3>
         <ul>
           <li><span class="t">9.30am</span><span>Matins<br><em>Etchingham</em></span></li>
@@ -63,7 +68,7 @@
           <li><span class="t">4.30pm</span><span>Evening Prayer<br><em>St Philip's, Burwash Weald</em></span></li>
         </ul>
       </div>
-      <div class="week">
+      <div class="week" data-week="5">
         <h3>5th Sunday</h3>
         <ul>
           <li><span class="t">9.15am</span><span>Sung Matins<br><em>St Bartholomew's, Burwash</em></span></li>
@@ -72,6 +77,7 @@
         </ul>
       </div>
     </div>
+    </details>
 
     <h2 style="margin-top:2.5rem">During the week</h2>
     <div class="grid-2">
@@ -114,6 +120,22 @@
     <p class="small">If the calendar doesn't load, <a href="https://calendar.google.com/calendar/embed?src=stbartholomewburwash%40gmail.com&amp;ctz=Europe%2FLondon">open it in Google Calendar</a>.</p>
   </div>
 </section>
+<script>
+(function(){
+  var box=document.getElementById('this-sunday'); if(!box) return;
+  var d=new Date(); d.setHours(12,0,0,0);
+  var isToday=d.getDay()===0;
+  d.setDate(d.getDate()+((7-d.getDay())%7));
+  var n=Math.ceil(d.getDate()/7);
+  var src=document.querySelector('.pattern .week[data-week="'+n+'"] ul'); if(!src) return;
+  var months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var ord=['','1st','2nd','3rd','4th','5th'][n];
+  document.getElementById('this-sunday-title').textContent=(isToday?'Today, Sunday ':'This Sunday, ')+d.getDate()+' '+months[d.getMonth()];
+  var card=box.querySelector('.this-sunday-card');
+  card.innerHTML='<h3>'+ord+' Sunday of the month</h3>'; card.appendChild(src.cloneNode(true));
+  box.hidden=false;
+})();
+</script>
 
 </main>
 <footer class="site-footer">
