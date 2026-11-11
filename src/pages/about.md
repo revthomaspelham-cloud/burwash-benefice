@@ -33,7 +33,7 @@ The Church's doctrine is set out in particular in the [Thirty-nine Articles of R
 
 Music has always been a big part of Tom's life. He studied music at Bristol, specialising in composition, and was Director of Music in Bradford on Avon while working as a database developer. Sensing a call to ordination, he trained at Ripon College Cuddesdon from 2015. He was ordained deacon in 2018, served his curacy in Poole, and was ordained priest in 2019.
 
-Tom is married to Sarah and they have two children. He is a governor of the church schools in Burwash and Etchingham. When he gets the chance he enjoys cycling, sailing, running and building model ships.
+Tom is married to Sarah and they have two children. He is a governor of the church schools in Burwash and Etchingham. When he gets the chance he enjoys cycling, sailing, running and building models, and he plays cricket for Burwash.
 
 [Get in touch with Tom](contact.html)
 

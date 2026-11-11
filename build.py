@@ -105,6 +105,7 @@ def load_settings():
                     out[k.strip()] = v.strip()
     today = datetime.date.today().isoformat()
     # Automatic: evening service time follows British Summer Time
+    out.setdefault("season", season_class())
     out.setdefault("evening_time", "6pm" if is_bst(datetime.date.today()) else "4.30pm")
     for d, k, v in sorted(dated):
         if d <= today:
@@ -190,7 +191,9 @@ def _page(meta, body):
     full_title = SITE_NAME if meta.get("nav") == "home" else f"{title} | {SITE_NAME}"
     desc = meta.get("description", "Church of England parishes of Burwash, Burwash Weald and Etchingham, East Sussex.")
     c = CONTACT
-    theme_css = f'\n<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..500&display=swap" rel="stylesheet">\n<link rel="stylesheet" href="theme-{THEME}.css">' if THEME else ""
+    theme_css = f'\n<link rel="stylesheet" href="theme-{THEME}.css">' if THEME else ""
+    fonts = "family=Cormorant+Garamond:wght@500;600;700&family=Indie+Flower&family=Source+Sans+3:wght@400;600"
+    fonts += {"mix": "&family=Oswald:wght@200..500", "full": "&family=Bebas+Neue", "blend": "&family=Bebas+Neue"}.get(THEME, "")
     if THEME in ("full", "mix"):
         brand_text = f'<span>{WORDMARK}{TAGLINE}</span>'
     elif THEME == "blend":
@@ -209,7 +212,7 @@ def _page(meta, body):
 <meta name="description" content="{html.escape(desc)}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Indie+Flower&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?{fonts}&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">{theme_css}
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -374,6 +377,22 @@ def news_card(m):
     return (f'<a class="card news-card"{until_attr(m)} href="{m["slug"]}">{img}<div class="body">'
             f'<p class="place">{nice_date(m["date"])}</p><h3>{html.escape(m["title"])}</h3>'
             f'<p>{html.escape(m["summary"])}</p><span class="read">Read more &rarr;</span></div></a>')
+
+
+def season_class(day=None):
+    """Same rules as the script on the home page, decided at build time (the site
+    rebuilds daily) so only one banner photo is downloaded."""
+    day = day or datetime.date.today()
+    advent = datetime.date(day.year, 11, 27)
+    while advent.weekday() != 6:
+        advent += datetime.timedelta(days=1)
+    if (day.month == 1 and day.day <= 6) or day >= advent:
+        return "season-winter"
+    if day.month in (3, 4):
+        return "season-spring"
+    if 5 <= day.month <= 9:
+        return "season-summer"
+    return ""
 
 
 def page(meta, body):
