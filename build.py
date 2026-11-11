@@ -79,6 +79,16 @@ CONTACT = {
 }
 
 
+def last_sunday(year, month):
+    d = datetime.date(year, month + 1, 1) - datetime.timedelta(days=1)
+    return d - datetime.timedelta(days=(d.weekday() + 1) % 7)
+
+
+def is_bst(day):
+    """British Summer Time runs from the last Sunday in March to the last Sunday in October."""
+    return last_sunday(day.year, 3) <= day < last_sunday(day.year, 10)
+
+
 def load_settings():
     """src/settings.txt: 'key: value' lines. Use {{key}} anywhere in page or news text.
     A line 'key from YYYY-MM-DD: value' takes over from that date (the site rebuilds daily)."""
@@ -94,6 +104,8 @@ def load_settings():
                 else:
                     out[k.strip()] = v.strip()
     today = datetime.date.today().isoformat()
+    # Automatic: evening service time follows British Summer Time
+    out.setdefault("evening_time", "6pm" if is_bst(datetime.date.today()) else "4.30pm")
     for d, k, v in sorted(dated):
         if d <= today:
             out[k] = v
