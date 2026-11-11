@@ -7,3 +7,8 @@ rector_phone: 07856 256 174
 rector_phone_link: tel:+447856256174
 whatsapp_link: https://chat.whatsapp.com/Hnf8zILV8Rk8XnDT7AK2zu
 facebook_link: https://www.facebook.com/profile.php?id=100087591101156
+
+# Early Sunday service time (used on the Services and home pages).
+# Changes to 9.15am automatically after the last Sunday in December 2026.
+early_time: 9.30am
+early_time from 2026-12-28: 9.15am

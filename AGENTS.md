@@ -62,7 +62,9 @@ Each file becomes `docs/news-<stem>.html` and appears on `news.html` and the hom
 `key: value` lines (`#` comments allowed). Any `{{key}}` in any page or news file
 (header or body) is replaced at build time. Current keys: `rector_name`,
 `rector_email`, `rector_phone`, `rector_phone_link`, `whatsapp_link`,
-`facebook_link`. Use these placeholders rather than hard-coding contact details.
+`facebook_link`, `early_time`. Use these placeholders rather than hard-coding contact details.
+A line `key from YYYY-MM-DD: value` overrides `key` from that date; the daily
+Action rebuild makes the switch happen on the day (e.g. `early_time` becomes 9.15am on 2026-12-28).
 
 ### Other configuration in `build.py`
 

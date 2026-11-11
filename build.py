@@ -13,6 +13,7 @@ Run `python3 build.py` and the finished site is written to docs/,
 which GitHub Pages serves.
 """
 import html
+import re
 import pathlib
 import shutil
 
@@ -79,14 +80,23 @@ CONTACT = {
 
 
 def load_settings():
-    """src/settings.txt: 'key: value' lines. Use {{key}} anywhere in page or news text."""
+    """src/settings.txt: 'key: value' lines. Use {{key}} anywhere in page or news text.
+    A line 'key from YYYY-MM-DD: value' takes over from that date (the site rebuilds daily)."""
     f = SRC / "settings.txt"
-    out = {}
+    out, dated = {}, []
     if f.exists():
         for line in f.read_text(encoding="utf-8").splitlines():
             if line.strip() and not line.lstrip().startswith("#") and ":" in line:
                 k, v = line.split(":", 1)
-                out[k.strip()] = v.strip()
+                m = re.fullmatch(r"(\S+)\s+from\s+(\d{4}-\d{2}-\d{2})", k.strip())
+                if m:
+                    dated.append((m.group(2), m.group(1), v.strip()))
+                else:
+                    out[k.strip()] = v.strip()
+    today = datetime.date.today().isoformat()
+    for d, k, v in sorted(dated):
+        if d <= today:
+            out[k] = v
     return out
 
 
