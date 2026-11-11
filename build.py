@@ -412,7 +412,7 @@ def build(with_redirects=True, out=None):
     }.items() if v})
     posts = load_news() if (SRC / "news").exists() else []
     current = [m for m in posts if is_current(m)]
-    latest = "".join(news_card(m) for m in current[:6])
+    latest = "".join(news_card(m) for m in current[:3])
     for p in sorted(list((SRC / "pages").glob("*.html")) + list((SRC / "pages").glob("*.md"))):
         meta, body = parse(p)
         body = body.replace("<!--LATEST_NEWS-->", latest).replace("<!--NEWS_BAR-->", news_bar(posts)).replace("<!--WA_BOX-->", WA_BOX)
