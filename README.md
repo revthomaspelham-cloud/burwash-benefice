@@ -68,7 +68,8 @@ The early Sunday service time is there too (`early_time`). A line such as
 `early_time from 2026-12-28: 9.15am` makes a change happen automatically on that date.
 
 Evening service times (`{{evening_time}}`) switch between 4.30pm and 6pm by
-themselves when the clocks change.
+themselves when the clocks change. Three weeks before each change, a reminder news item
+appears automatically. Its wording is in `src/news/_clocks.md`.
 
 ### Change the words on a page
 

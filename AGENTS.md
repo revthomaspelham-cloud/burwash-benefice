@@ -57,6 +57,11 @@ Each file becomes `docs/news-<stem>.html` and appears on `news.html` and the hom
 
 `src/news/_template.md` is the copy-me template.
 
+`src/news/_clocks.md` is the automatic clocks-change reminder. `clocks_post()` in
+build.py turns it into a news item (with a bar headline) for the 21 days before each
+change of the clocks, filling `{{clocks_way}}`, `{{clocks_day}}`, `{{clocks_new_time}}`
+and `{{clocks_old_time}}`. Edit the wording in that file; don't create clocks posts by hand.
+
 ### Settings: `src/settings.txt`
 
 `key: value` lines (`#` comments allowed). Any `{{key}}` in any page or news file

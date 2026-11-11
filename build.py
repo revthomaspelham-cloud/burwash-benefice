@@ -303,8 +303,47 @@ def load_news():
         meta["slug"] = "news-" + f.stem + ".html"
         meta["body"] = body
         posts.append(meta)
+    clocks = clocks_post()
+    if clocks:
+        posts.append(clocks)
     posts.sort(key=lambda m: (m["date"], m["slug"]), reverse=True)
     return posts
+
+
+def clocks_post(today=None, days_before=21):
+    """Automatic reminder, built from src/news/_clocks.md, shown for three weeks before
+    each change of the clocks (last Sunday of March and of October)."""
+    tpl = SRC / "news" / "_clocks.md"
+    today = today or datetime.date.today()
+    if not tpl.exists():
+        return None
+    changes = sorted(last_sunday(y, m) for y in (today.year, today.year + 1) for m in (3, 10))
+    change = next(d for d in changes if d >= today)
+    start = change - datetime.timedelta(days=days_before)
+    if today < start:
+        return None
+    forward = change.month == 3
+    fields = {
+        "clocks_way": "forward" if forward else "back",
+        "clocks_day": f"Sunday {change.day} {change.strftime('%B')}",
+        "clocks_new_time": "6pm" if forward else "4.30pm",
+        "clocks_old_time": "4.30pm" if forward else "6pm",
+    }
+    text = tpl.read_text(encoding="utf-8")
+    text = text.split("\n(This reminder appears")[0]
+    for k, v in fields.items():
+        text = text.replace("{{" + k + "}}", v)
+    tmp = OUT.parent / ".clocks-tmp.md"
+    head, body = text.split("\n---\n", 1)
+    head += f"\ndate: {start.isoformat()}\nuntil: {change.isoformat()}"
+    tmp.write_text(head + "\n---\n" + body, encoding="utf-8")
+    try:
+        meta, body = parse(tmp)
+    finally:
+        tmp.unlink()
+    meta["slug"] = f"news-clocks-{change.isoformat()}.html"
+    meta["body"] = body
+    return meta
 
 
 def nice_date(d):
