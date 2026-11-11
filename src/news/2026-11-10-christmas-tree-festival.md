@@ -1,0 +1,17 @@
+title: Christmas Tree Festival at St Bartholomew's
+date: 2026-11-09
+summary: St Bartholomew's will be filled with Christmas trees from Saturday 28 November to Wednesday 2 December, with evening entertainment on the opening night.
+image: images/burwash-aerial.jpg
+until: 2026-12-02
+headline: Christmas Tree Festival at St Bartholomew's, 28 November to 2 December.
+---
+St Bartholomew's Church in Burwash will be filled with Christmas trees for our **Christmas Tree Festival**. Do come and see them, and bring family and friends.
+
+<ul class="event-list">
+<li><span class="d">Sat 28 Nov</span><span><strong>Festival opens</strong>, with <strong>evening entertainment from 6pm</strong></span></li>
+<li><span class="d">Sun 29 Nov, 4.30pm</span><span><strong>Crib, Toy and Carol Service</strong> among the trees. Please bring a toy to give to <strong>Family Support Work</strong>.</span></li>
+<li><span class="d">Mon 30 Nov &amp; Tue 1 Dec</span><span>Closed</span></li>
+<li><span class="d">Wed 2 Dec</span><span>Last day of the festival</span></li>
+</ul>
+
+<p class="small">Parking near the church is limited, so please use the village car park next to the Bear Inn.</p>

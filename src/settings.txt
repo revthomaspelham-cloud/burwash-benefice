@@ -1,0 +1,9 @@
+# Shared details used across the site. Write {{key}} in any page or news post
+# and the build replaces it with the value below. Change it here once and it
+# updates everywhere.
+rector_name: Revd Tom Pelham
+rector_email: revthomaspelham@gmail.com
+rector_phone: 07856 256 174
+rector_phone_link: tel:+447856256174
+whatsapp_link: https://chat.whatsapp.com/Hnf8zILV8Rk8XnDT7AK2zu
+facebook_link: https://www.facebook.com/profile.php?id=100087591101156

@@ -78,13 +78,54 @@ CONTACT = {
 }
 
 
+def load_settings():
+    """src/settings.txt: 'key: value' lines. Use {{key}} anywhere in page or news text."""
+    f = SRC / "settings.txt"
+    out = {}
+    if f.exists():
+        for line in f.read_text(encoding="utf-8").splitlines():
+            if line.strip() and not line.lstrip().startswith("#") and ":" in line:
+                k, v = line.split(":", 1)
+                out[k.strip()] = v.strip()
+    return out
+
+
+SETTINGS = None
+
+
+def fill(text):
+    global SETTINGS
+    if SETTINGS is None:
+        SETTINGS = load_settings()
+    for k, v in SETTINGS.items():
+        text = text.replace("{{" + k + "}}", v)
+    return text
+
+
+def md(text):
+    """Markdown (with raw HTML allowed) -> HTML."""
+    import markdown
+    return markdown.markdown(text, extensions=["extra", "sane_lists"], output_format="html5")
+
+
 def parse(path):
-    text = path.read_text(encoding="utf-8")
+    """Front-matter ('key: value' lines), a line '---', then the body.
+    .md files: body is Markdown. .html files: body is HTML."""
+    text = path.read_text(encoding="utf-8").replace("\r\n", "\n")
     head, body = text.split("\n---\n", 1)
     meta = {}
     for line in head.strip().splitlines():
+        if ":" not in line:
+            continue
         k, v = line.split(":", 1)
-        meta[k.strip()] = v.strip()
+        meta[k.strip()] = fill(v.strip())
+    body = fill(body)
+    if path.suffix == ".md":
+        body = md(body)
+        if meta.get("layout", "prose") == "prose" and path.parent.name in ("pages", "drafts"):
+            intro = f'<p>{meta["intro"]}</p>' if meta.get("intro") else ""
+            body = (f'<div class="page-head"><div class="wrap"><h1>{meta.get("heading", meta["title"])}</h1>{intro}</div></div>'
+                    f'<section class="block"><div class="wrap narrow prose">{body}</div></section>')
     return meta, body
 
 
@@ -122,7 +163,7 @@ WORDMARK = '<span class="wm"><span class="nm"><b>B</b>urwash<span class="sep">,<
 TAGLINE = '<span class="tagline">Worship for Everybody</span>'
 
 
-def page(meta, body):
+def _page(meta, body):
     title = meta["title"]
     full_title = SITE_NAME if meta.get("nav") == "home" else f"{title} | {SITE_NAME}"
     desc = meta.get("description", "Church of England parishes of Burwash, Burwash Weald and Etchingham, East Sussex.")
@@ -228,12 +269,14 @@ import datetime
 
 
 WA_BOX = ('<div class="wa-box"><div><h3>Weekly news on WhatsApp</h3><p>Join our WhatsApp community to get each week\'s services and events straight to your phone.</p></div>'
-          '<a class="btn wa-btn" href="https://chat.whatsapp.com/Hnf8zILV8Rk8XnDT7AK2zu">Join on WhatsApp</a></div>')
+          '<a class="btn wa-btn" href="{{whatsapp_link}}">Join on WhatsApp</a></div>')
 
 
 def load_news():
     posts = []
-    for f in sorted((SRC / "news").glob("*.html")):
+    for f in sorted(list((SRC / "news").glob("*.html")) + list((SRC / "news").glob("*.md"))):
+        if f.name.startswith("_"):
+            continue  # _template.md etc.
         meta, body = parse(f)
         meta["slug"] = "news-" + f.stem + ".html"
         meta["body"] = body
@@ -272,19 +315,28 @@ def news_card(m):
             f'<p>{html.escape(m["summary"])}</p><span class="read">Read more &rarr;</span></div></a>')
 
 
+def page(meta, body):
+    return fill(_page(meta, body))
+
+
 def build(with_redirects=True, out=None):
     global OUT
     if out: OUT = out
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir(parents=True)
+    st = load_settings()
+    CONTACT.update({k: v for k, v in {
+        "phone": st.get("rector_phone"), "phone_href": st.get("rector_phone_link", "").replace("tel:", ""),
+        "email": st.get("rector_email"), "facebook": st.get("facebook_link"), "whatsapp": st.get("whatsapp_link"),
+    }.items() if v})
     posts = load_news() if (SRC / "news").exists() else []
     current = [m for m in posts if is_current(m)]
     latest = "".join(news_card(m) for m in current[:6])
-    for p in sorted((SRC / "pages").glob("*.html")):
+    for p in sorted(list((SRC / "pages").glob("*.html")) + list((SRC / "pages").glob("*.md"))):
         meta, body = parse(p)
         body = body.replace("<!--LATEST_NEWS-->", latest).replace("<!--NEWS_BAR-->", news_bar(posts)).replace("<!--WA_BOX-->", WA_BOX)
-        (OUT / p.name).write_text(page(meta, body), encoding="utf-8")
+        (OUT / (p.stem + ".html")).write_text(page(meta, body), encoding="utf-8")
     listing = "".join(news_card(m) for m in current) or "<p>No news at the moment.</p>"
     news_body = ('<div class="page-head"><div class="wrap"><h1>News</h1><p>What\'s happening across our three churches.</p></div></div>'
                  f'<section class="block"><div class="wrap">{WA_BOX}<div class="grid-3">{listing}</div></div></section>')
