@@ -27,7 +27,7 @@ The Church's doctrine is set out in particular in the [Thirty-nine Articles of R
 
 ## Our Rector
 
-<img alt="Revd Tom Pelham, Rector, in robes in church" class="rector-photo" src="images/rector.jpg"/>
+<img alt="Revd Tom Pelham, Rector" class="rector-photo" src="images/rector.jpg"/>
 
 **Revd Tom Pelham** has been Rector of Burwash, Burwash Weald and Etchingham since 2021.
 
