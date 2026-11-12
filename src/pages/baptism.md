@@ -5,6 +5,8 @@ intro: Welcoming a new member into the family of the Church.
 ---
 Baptism, sometimes called christening, is the start of a journey of faith. We'd love to talk with you whether you're thinking of baptism for your child or for yourself.
 
+The enquiry form below is for the baptism of children. If you're thinking about baptism or confirmation for yourself as an adult, please contact the Rector directly: we'd love to hear from you.
+
 ### How to arrange a baptism
 
 - Get in touch with the Rector to talk about a date.
@@ -13,8 +15,9 @@ Baptism, sometimes called christening, is the start of a journey of faith. We'd 
 
 <div class="facts">
 <h3>Get in touch</h3>
-<p><a class="btn" href="{{baptism_form}}">Make a baptism enquiry</a></p>
-<p>Or, if you'd rather, email or phone the Rector: <a href="mailto:{{rector_email}}">{{rector_email}}</a> · <a href="{{rector_phone_link}}">{{rector_phone}}</a></p>
+<p><a class="btn" href="{{baptism_form}}">Make a baptism enquiry for a child</a></p>
+<p>Or, if you'd rather (and for adult baptism or confirmation), email or phone the Rector: <a href="mailto:{{rector_email}}">{{rector_email}}</a> · <a href="{{rector_phone_link}}">{{rector_phone}}</a></p>
+<p class="small">How we use your details: <a href="rector-privacy.html">privacy notice</a>.</p>
 </div>
 
 <p class="small">The Church of England's <a href="https://www.churchofengland.org/life-events/christenings">christenings pages</a> have more information.</p>
