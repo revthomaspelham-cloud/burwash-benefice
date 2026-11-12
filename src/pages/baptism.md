@@ -13,7 +13,8 @@ Baptism, sometimes called christening, is the start of a journey of faith. We'd 
 
 <div class="facts">
 <h3>Get in touch</h3>
-<p><a href="mailto:{{rector_email}}">{{rector_email}}</a> · <a href="{{rector_phone_link}}">{{rector_phone}}</a></p>
+<p><a class="btn" href="{{baptism_form}}">Make a baptism enquiry</a></p>
+<p>Or, if you'd rather, email or phone the Rector: <a href="mailto:{{rector_email}}">{{rector_email}}</a> · <a href="{{rector_phone_link}}">{{rector_phone}}</a></p>
 </div>
 
 <p class="small">The Church of England's <a href="https://www.churchofengland.org/life-events/christenings">christenings pages</a> have more information.</p>

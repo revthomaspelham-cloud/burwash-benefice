@@ -12,3 +12,7 @@ facebook_link: https://www.facebook.com/profile.php?id=100087591101156
 # Changes to 9.15am automatically after the last Sunday in December 2026.
 early_time: 9.30am
 early_time from 2026-12-28: 9.15am
+
+# Enquiry forms (Google Forms in the St Bartholomew's account; responses go to the Rector only)
+baptism_form: https://docs.google.com/forms/d/e/1FAIpQLSfOhUi3k00ucdjIqsGRH_gUQuYF_wvuLldKLpDxHU31pp8RrQ/viewform
+wedding_form: https://docs.google.com/forms/d/e/1FAIpQLSceTHN4KNUea0_Fi51I1thw7FqZf5rjM3TyBm8gEKltxlYTsQ/viewform

@@ -141,4 +141,5 @@ For a refactor with no intended visual change, copy `docs/` before and diff afte
 - A weekly scheduled assistant task (Mondays, 07:45 UK time) suggests news items
   from Tom's email and calendar. It only suggests; nothing is published without Tom.
 - The benefice Google account (St Bartholomew's) owns the service calendar and the
-  forms. It is a shared benefice account and is **not** used for correspondence.
+  forms, including the Baptism and Wedding enquiry forms (live; responses go to the Rector
+  only, who is data controller for them; links in `src/settings.txt`). It is a shared benefice account and is **not** used for correspondence.

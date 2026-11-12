@@ -11,7 +11,8 @@ We'll guide you through the legal side, including banns or licence, your qualify
 
 <div class="facts">
 <h3>Next step</h3>
-<p>Get in touch with the Rector to talk about dates and arrangements: <a href="mailto:{{rector_email}}">{{rector_email}}</a> or <a href="{{rector_phone_link}}">{{rector_phone}}</a>.</p>
+<p><a class="btn" href="{{wedding_form}}">Make a wedding enquiry</a></p>
+<p>Or, if you'd rather, email or phone the Rector to talk about dates and arrangements: <a href="mailto:{{rector_email}}">{{rector_email}}</a> or <a href="{{rector_phone_link}}">{{rector_phone}}</a>.</p>
 </div>
 
 <p class="small">The Church of England's <a href="https://www.yourchurchwedding.org/">Your Church Wedding</a> site has lots of helpful information about planning a church wedding.</p>
