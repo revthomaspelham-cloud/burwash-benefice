@@ -9,7 +9,7 @@ Baptism, sometimes called christening, is the start of a journey of faith. We'd 
 
 - Get in touch with the Rector to talk about a date.
 - We'll meet to talk through the service and what the promises mean.
-- You'll choose godparents. Usually at least two must be baptised themselves.
+- You'll choose godparents. All godparents must have been baptised, and ideally confirmed too.
 
 <div class="facts">
 <h3>Get in touch</h3>
