@@ -383,7 +383,7 @@ def news_bar(posts):
 def news_card(m):
     img = f'<div class="photo"><img src="{m["image"]}" alt="" loading="lazy"></div>' if m.get("image") else ""
     return (f'<a class="card news-card"{until_attr(m)} href="{m["slug"]}">{img}<div class="body">'
-            f'<p class="place">{nice_date(m["date"])}</p><h3>{html.escape(m["title"])}</h3>'
+            f'<h3>{html.escape(m["title"])}</h3>'
             f'<p>{html.escape(m["summary"])}</p><span class="read">Read more &rarr;</span></div></a>')
 
 
@@ -432,7 +432,7 @@ def build(with_redirects=True, out=None):
     (OUT / "news.html").write_text(page({"title": "News", "nav": "news", "url": "news.html", "description": "News from the benefice of Burwash, Burwash Weald and Etchingham."}, news_body), encoding="utf-8")
     for m in posts:
         img = f'<div class="photo wide"><img src="{m["image"]}" alt=""></div>' if m.get("image") else ""
-        body = (f'<div class="page-head"><div class="wrap"><p class="eyebrow">{nice_date(m["date"])}</p><h1>{html.escape(m["title"])}</h1></div></div>'
+        body = (f'<div class="page-head"><div class="wrap"><p class="eyebrow">News</p><h1>{html.escape(m["title"])}</h1><p>Posted: {nice_date(m["date"])}</p></div></div>'
                 f'<section class="block"><div class="wrap narrow prose">{img}{m["body"]}<p style="margin-top:2rem"><a href="news.html">&larr; All news</a></p></div></section>')
         (OUT / m["slug"]).write_text(page({"title": m["title"], "nav": "news", "description": m["summary"], "url": m["slug"], "image": m.get("image", "")}, body), encoding="utf-8")
     nf = ('<div class="page-head"><div class="wrap"><h1>Page not found</h1><p>Sorry, we can\'t find that page.</p></div></div>'
