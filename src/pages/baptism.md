@@ -3,7 +3,7 @@ nav: baptism
 description: Arranging a baptism (christening) or confirmation in Burwash, Burwash Weald or Etchingham.
 intro: Beginning, and growing in, the journey of faith.
 ---
-Baptism, sometimes called christening, is the start of a journey of faith. Confirmation is when someone who has been baptised affirms that faith for themselves. We'd love to talk with you about either, whether for your child or for yourself.
+Baptism, sometimes called christening, is the start of a journey of faith. Confirmation is when someone who has been baptised affirms that faith for themselves. We also offer a service of thanksgiving and blessing for children. We'd love to talk with you about any of these, whether for your child or for yourself.
 
 ### Baptism for children
 
@@ -17,6 +17,18 @@ Baptism, sometimes called christening, is the start of a journey of faith. Confi
 <p>Or, if you'd rather, email or phone the Rector: <a href="mailto:{{rector_email}}">{{rector_email}}</a> · <a href="{{rector_phone_link}}">{{rector_phone}}</a></p>
 <p class="small">How we use your details: <a href="rector-privacy.html">privacy notice</a>.</p>
 </div>
+
+### Thanksgiving and blessing for a child
+
+<div class="photo wide"><img src="images/thanksgiving.jpg" alt="The Rector blessing a family holding their young daughter at the chancel step" loading="lazy"></div>
+
+Some parents would love to celebrate their child and give thanks to God, but don't feel able to make the baptism promises, either on their child's behalf or for themselves. That's absolutely fine, and we'd love to help.
+
+We offer a service of Thanksgiving for the Gift of a Child. We give thanks to God for your child, your child is named and blessed, and we pray for you as a family. There are no promises to make and no godparents are needed, though you're welcome to choose "supporting friends". It can be part of a Sunday morning service, or a separate service for family and friends.
+
+A thanksgiving doesn't close the door to baptism. Your child can be baptised later, or choose baptism for themselves when they're older.
+
+To talk it through, contact the Rector: <a href="mailto:{{rector_email}}">{{rector_email}}</a> or <a href="{{rector_phone_link}}">{{rector_phone}}</a>.
 
 ### Adult baptism and confirmation
 
