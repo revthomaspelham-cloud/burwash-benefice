@@ -188,12 +188,21 @@ WORDMARK = '<span class="wm"><span class="nm"><b>B</b>urwash<span class="sep">,<
 TAGLINE = '<span class="tagline">Worship for Everybody</span>'
 
 
+def css_version():
+    """Short hash of the stylesheets, so browsers fetch fresh CSS whenever it changes."""
+    import hashlib
+    h = hashlib.md5()
+    for f in sorted(SRC.glob("*.css")):
+        h.update(f.read_bytes())
+    return h.hexdigest()[:8]
+
+
 def _page(meta, body):
     title = meta["title"]
     full_title = SITE_NAME if meta.get("nav") == "home" else f"{title} | {SITE_NAME}"
     desc = meta.get("description", "Church of England parishes of Burwash, Burwash Weald and Etchingham, East Sussex.")
     c = CONTACT
-    theme_css = f'\n<link rel="stylesheet" href="theme-{THEME}.css">' if THEME else ""
+    theme_css = f'\n<link rel="stylesheet" href="theme-{THEME}.css?v={css_version()}">' if THEME else ""
     fonts = "family=Cormorant+Garamond:wght@500;600;700&family=Indie+Flower&family=Source+Sans+3:wght@400;600"
     fonts += {"mix": "&family=Oswald:wght@200..500", "full": "&family=Bebas+Neue", "blend": "&family=Bebas+Neue"}.get(THEME, "")
     if THEME in ("full", "mix"):
@@ -215,7 +224,7 @@ def _page(meta, body):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?{fonts}&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">{theme_css}
+<link rel="stylesheet" href="style.css?v={css_version()}">{theme_css}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{html.escape(SITE_NAME)}">
 <meta property="og:title" content="{html.escape(title if meta.get("nav") != "home" else SITE_NAME)}">
