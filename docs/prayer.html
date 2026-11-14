@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ask for prayer | The Benefice of Burwash, Burwash Weald &amp; Etchingham</title>
+<meta name="description" content="Send a prayer request to the churches of Burwash, Burwash Weald and Etchingham. We pray for every request at Thursday Communion.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Indie+Flower&family=Source+Sans+3:wght@400;600&family=Oswald:wght@200..500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="theme-mix.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Benefice of Burwash, Burwash Weald &amp; Etchingham">
+<meta property="og:title" content="Ask for prayer">
+<meta property="og:description" content="Send a prayer request to the churches of Burwash, Burwash Weald and Etchingham. We pray for every request at Thursday Communion.">
+<meta property="og:url" content="https://burwashbenefice.org.uk/prayer.html">
+<meta property="og:image" content="https://burwashbenefice.org.uk/images/weald-view.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+</head>
+<body class="theme-mix">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html"><img class="logo-mark" src="images/crossburst.png" alt="" width="40" height="50"><span><span class="wm"><span class="nm"><b>B</b>urwash<span class="sep">,</span></span> <span class="nm"><b>B</b>urwash <b>W</b>eald<span class="sep">,</span></span> <span class="nm"><b>E</b>tchingham</span></span><span class="tagline">Worship for Everybody</span></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Main"><ul><li><a href="index.html">Home</a></li><li class="has-sub"><a href="services.html">Services</a><ul class="sub"><li><a href="services.html">Service calendar</a></li><li><a href="baptism.html">Baptism &amp; confirmation</a></li><li><a href="weddings.html">Weddings</a></li><li><a href="funerals.html">Funerals</a></li><li><a href="burial-of-ashes.html">Burial of ashes</a></li></ul></li><li class="has-sub"><a href="about.html">About us</a><ul class="sub"><li><a href="about.html">Who we are</a></li><li><a href="burwash.html">St Bartholomew&#x27;s, Burwash</a></li><li><a href="burwash-weald.html">St Philip&#x27;s, Burwash Weald</a></li><li><a href="etchingham.html">Etchingham</a></li></ul></li><li class="has-sub"><a href="get-involved.html">Get involved</a><ul class="sub"><li><a href="get-involved.html">All the ways to get involved</a></li><li><a href="choir.html">Choir</a></li><li><a href="bellringing.html">Bellringing</a></li><li><a href="get-involved.html#sidespeople">Sidespeople &amp; welcome</a></li><li><a href="get-involved.html#readers">Readers</a></li><li><a href="get-involved.html#3cs">3Cs: Coffee, Cake &amp; Chat</a></li><li><a href="get-involved.html#pastoral">Pastoral visiting</a></li><li><a href="get-involved.html#house-groups">House groups</a></li><li><a href="get-involved.html#toddlers">Toddler groups</a></li></ul></li><li><a href="news.html">What&#x27;s on</a></li><li><a href="safeguarding.html">Safeguarding</a></li><li><a href="contact.html">Contact</a></li><li class="nav-give"><a href="give.html">Give</a></li></ul></nav>
+  </div>
+</header>
+<main id="main">
+<div class="page-head"><div class="wrap"><h1>Ask for prayer</h1><p>Whatever is on your heart, we'd be glad to pray with you.</p></div></div>
+<section class="block">
+  <div class="wrap narrow prose">
+    <p>Every request is prayed for at our Thursday Communion, 10am at St Bartholomew's, Burwash. You're welcome to join us. You can give your name, or stay anonymous. Either way, your request will be prayed for.</p>
+    <p>Names in your request may be read out in church. So if you mention someone else, please make sure they're happy to be prayed for by name.</p>
+
+    <form class="site-form" id="prayer-form" data-endpoint="" novalidate>
+      <div>
+        <label for="pr-request">Your prayer request</label>
+        <textarea id="pr-request" name="request" required></textarea>
+      </div>
+      <div>
+        <label for="pr-name">Your name <span class="hint">Optional</span></label>
+        <input type="text" id="pr-name" name="name" autocomplete="name">
+      </div>
+      <div>
+        <label for="pr-email">Your email <span class="hint">Optional: only if you'd like the Rector to get in touch</span></label>
+        <input type="email" id="pr-email" name="email" autocomplete="email">
+      </div>
+      <div class="hp" aria-hidden="true"><label for="pr-website">Leave this empty</label><input type="text" id="pr-website" name="website" tabindex="-1" autocomplete="off"></div>
+      <label class="choice"><input type="checkbox" name="consent" value="yes" required> <span>I understand my request will be emailed to the Rector and prayed for at Thursday Communion, where names may be read out.</span></label>
+      <p class="form-error" id="pr-error" hidden></p>
+      <button type="submit" class="btn">Send my request</button>
+    </form>
+    <div class="form-msg" id="pr-thanks" hidden><strong>Thank you.</strong> Your request has been sent, and we'll pray for it at Thursday Communion.</div>
+    <noscript><p>To send a prayer request, please email <a href="mailto:revthomaspelham@gmail.com">revthomaspelham@gmail.com</a>.</p></noscript>
+
+    <h3>Would you rather talk?</h3>
+    <p>Call the Rector on <a href="tel:+447856256174">07856 256 174</a> or email <a href="mailto:revthomaspelham@gmail.com">revthomaspelham@gmail.com</a>. If you'd like someone to visit, for yourself or someone you know, our <a href="get-involved.html#pastoral">pastoral team</a> would be glad to.</p>
+
+    <h3>Your information</h3>
+    <p class="small">Your request goes by email to the Rector, Revd Thomas Pelham, who is responsible for it. It isn't stored on this website or shared with anyone else, apart from being prayed for in church as described above. The Rector deletes prayer requests within a month. You can ask for yours to be deleted sooner, or ask any questions, at <a href="mailto:revthomaspelham@gmail.com">revthomaspelham@gmail.com</a>.</p>
+  </div>
+</section>
+<script>
+(function(){
+  var f=document.getElementById('prayer-form'),err=document.getElementById('pr-error'),thanks=document.getElementById('pr-thanks');
+  var url=f.getAttribute('data-endpoint')||'';
+  function fail(msg){err.textContent=msg;err.hidden=false;}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();err.hidden=true;
+    if(!f.request.value.trim()){fail('Please write your prayer request.');f.request.focus();return;}
+    if(!f.consent.checked){fail('Please tick the box to say you understand how your request will be used.');return;}
+    if(f.website.value){return;}
+    if(url.indexOf('https://')!==0){fail('Sorry, the form isn’t working yet. Please email your request to revthomaspelham@gmail.com.');return;}
+    var b=f.querySelector('button');b.disabled=true;b.textContent='Sending…';
+    fetch(url,{method:'POST',mode:'no-cors',body:new URLSearchParams(new FormData(f))})
+      .then(function(){f.hidden=true;thanks.hidden=false;thanks.scrollIntoView({block:'center'});})
+      .catch(function(){b.disabled=false;b.textContent='Send my request';fail('Sorry, something went wrong. Please try again, or email revthomaspelham@gmail.com.');});
+  });
+})();
+</script>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <h2>Get in touch</h2>
+      <p>The Rector, Revd Thomas Pelham</p>
+      <p><a href="tel:+447856256174">07856 256 174</a><br>
+      <a href="mailto:revthomaspelham@gmail.com">revthomaspelham@gmail.com</a></p>
+      <p><a href="contact.html">Send us a message</a> &middot; <a href="https://www.facebook.com/profile.php?id=100087591101156">Facebook</a> &middot; <a href="https://chat.whatsapp.com/Hnf8zILV8Rk8XnDT7AK2zu">WhatsApp</a></p>
+    </div>
+    <div>
+      <h2>Our churches</h2>
+      <ul class="plain">
+        <li><a href="burwash.html">St Bartholomew's, Burwash</a></li>
+        <li><a href="burwash-weald.html">St Philip's, Burwash Weald</a></li>
+        <li><a href="etchingham.html">The Assumption of the Blessed Virgin &amp; St Nicholas, Etchingham</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Support us</h2>
+      <p>Give regularly through the Parish Giving Scheme:</p>
+      <ul class="plain">
+        <li><a href="https://www.parishgiving.org.uk/donors/find-your-parish/burwash-st-bartholomews-etchingham">St Bartholomew's, Burwash</a></li>
+        <li><a href="https://www.parishgiving.org.uk/donors/find-your-parish/burwash-weald-st-philip-burwash-common">St Philip's, Burwash Weald</a></li>
+        <li><a href="https://www.parishgiving.org.uk/donors/find-your-parish/etchingham-st-mary-w-nicholas-hastings-tunbridge-wells">Etchingham</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Safeguarding</h2>
+      <p>If you are worried about a child or adult, see our <a href="safeguarding.html">safeguarding page</a> for who to contact.</p>
+      <a class="cofe" href="https://www.churchofengland.org/"><img src="images/cofe-white.png" alt="The Church of England" width="90"></a>
+      <p class="small">Part of the Church of England, in the <a href="https://www.chichester.anglican.org/">Diocese of Chichester</a>.</p>
+      <p class="small">Each parish is run by its Parochial Church Council. St Bartholomew's PCC is a registered charity (no. 1133028); the PCCs of St Philip's and Etchingham are excepted charities.</p>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var b=document.querySelector('.menu-toggle'),n=document.getElementById('site-nav');
+b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);});})();
+// Hide news whose 'until' date has passed (shown until the end of that day)
+(function(){var t=new Date();t.setHours(0,0,0,0);
+document.querySelectorAll('[data-until]').forEach(function(el){var d=new Date(el.dataset.until+'T00:00:00');if(d<t)el.remove();});
+var bar=document.querySelector('.news-bar');if(!bar)return;var it=bar.querySelectorAll('.nb-item');
+if(!it.length){bar.remove();return;}var i=0,paused=false;it[0].classList.add('on');if(it.length<2)return;
+bar.addEventListener('mouseenter',function(){paused=true;});bar.addEventListener('mouseleave',function(){paused=false;});
+bar.addEventListener('focusin',function(){paused=true;});bar.addEventListener('focusout',function(){paused=false;});
+setInterval(function(){if(paused)return;it[i].classList.remove('on');i=(i+1)%it.length;it[i].classList.add('on');},6000);})();
+</script>
+</body>
+</html>

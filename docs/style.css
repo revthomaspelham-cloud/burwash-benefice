@@ -267,3 +267,33 @@ a.inv:hover{box-shadow:0 10px 24px rgba(50,26,58,.1);color:var(--ink)}
 .pattern-details{margin:1rem 0 .5rem}
 .pattern-details[open] .pattern{margin-top:1.5rem}
 .this-sunday .small{margin-top:.6rem}
+
+/* Home: "How can we help?" strip */
+.help-strip{background:#faf6f1;border-bottom:1px solid var(--line);padding:1.75rem 0}
+.help-title{font-size:1.5rem;margin:0 0 1rem}
+.help-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:.9rem}
+.help-tile{display:flex;align-items:center;gap:.9rem;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:.9rem 1.1rem;text-decoration:none;color:var(--ink);transition:transform .15s,box-shadow .15s}
+.help-tile:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(50,26,58,.1);color:var(--ink)}
+.help-tile .icon{flex:none;width:42px;height:42px;border-radius:50%;background:var(--stone-2);color:var(--plum);display:flex;align-items:center;justify-content:center}
+.help-tile .icon svg{width:22px;height:22px}
+.help-tile .txt{display:flex;flex-direction:column;line-height:1.3}
+.help-tile strong{font-weight:600;font-size:1.1rem}
+.help-tile .txt span{font-size:.92rem;color:var(--ink-soft)}
+.help-tile::after{content:"\203A";margin-left:auto;font-size:1.6rem;color:var(--gold);line-height:1}
+.help-foot{margin:.9rem 0 0;font-size:.95rem;color:var(--ink-soft)}
+
+/* Forms on our own pages */
+.site-form{display:grid;gap:1.1rem;margin:1.5rem 0}
+.site-form label{display:block;font-weight:600;margin-bottom:.3rem}
+.site-form .hint{display:block;font-weight:400;font-size:.92rem;color:var(--ink-soft)}
+.site-form input[type=text],.site-form input[type=email],.site-form textarea{width:100%;font:inherit;padding:.65rem .8rem;border:1px solid var(--line);border-radius:var(--radius);background:var(--white);color:var(--ink)}
+.site-form textarea{min-height:9rem;resize:vertical}
+.site-form input:focus,.site-form textarea:focus{outline:2px solid var(--gold);outline-offset:1px}
+.site-form fieldset{border:0;padding:0;margin:0}
+.site-form legend{font-weight:600;margin-bottom:.3rem}
+.site-form .choice{display:flex;gap:.6rem;align-items:flex-start;font-weight:400;margin:.35rem 0}
+.site-form .choice input{margin-top:.35rem}
+.site-form .hp{position:absolute;left:-9999px}
+.site-form button{justify-self:start;border:0;cursor:pointer;font:inherit}
+.form-msg{padding:1rem 1.25rem;border-radius:var(--radius);background:var(--white);border:1px solid var(--line);border-left:4px solid var(--gold)}
+.form-error{color:#9b2c2c;font-weight:600;margin:0}

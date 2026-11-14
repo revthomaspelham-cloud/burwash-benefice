@@ -10,6 +10,8 @@ Services can be quiet and simple or more formal. Each is shaped to reflect the p
 
 You can make arrangements directly with us or through your funeral director. We'll take care of everything to do with the church and churchyard.
 
+After a cremation, we can also bury ashes in our churchyards. See [Burial of ashes](burial-of-ashes.html).
+
 <div class="facts">
 <h3>Talk to us</h3>
 <p>Contact the Rector: <a href="{{rector_phone_link}}">{{rector_phone}}</a> or <a href="mailto:{{rector_email}}">{{rector_email}}</a>.</p>

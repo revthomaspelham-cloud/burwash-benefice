@@ -32,6 +32,7 @@ NAV = [
         ("Baptism & confirmation", "baptism.html", "baptism"),
         ("Weddings", "weddings.html", "weddings"),
         ("Funerals", "funerals.html", "funerals"),
+        ("Burial of ashes", "burial-of-ashes.html", "ashes"),
     ]),
     ("About us", "about.html", "about", [
         ("Who we are", "about.html", "about"),
