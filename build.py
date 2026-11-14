@@ -50,7 +50,7 @@ NAV = [
         ("House groups", "get-involved.html#house-groups", "house-groups"),
         ("Toddler groups", "get-involved.html#toddlers", "toddlers"),
     ]),
-    ("News", "news.html", "news", []),
+    ("What's on", "news.html", "news", []),
     ("Safeguarding", "safeguarding.html", "safeguarding", []),
     ("Contact", "contact.html", "contact", []),
     ("Give", "give.html", "give", []),
@@ -419,7 +419,8 @@ def build(with_redirects=True, out=None):
         "email": st.get("rector_email"), "facebook": st.get("facebook_link"), "whatsapp": st.get("whatsapp_link"),
     }.items() if v})
     posts = load_news() if (SRC / "news").exists() else []
-    current = [m for m in posts if is_current(m)]
+    # Soonest event first (by its last day shown); notices with no end date come after
+    current = sorted((m for m in posts if is_current(m)), key=lambda m: (m.get("until") or "9999-12-31", m["date"]))
     latest = "".join(news_card(m) for m in current[:3])
     for p in sorted(list((SRC / "pages").glob("*.html")) + list((SRC / "pages").glob("*.md"))):
         meta, body = parse(p)
@@ -427,13 +428,13 @@ def build(with_redirects=True, out=None):
         body = body.replace("<!--LATEST_NEWS-->", latest).replace("<!--NEWS_BAR-->", news_bar(posts)).replace("<!--WA_BOX-->", WA_BOX)
         (OUT / (p.stem + ".html")).write_text(page(meta, body), encoding="utf-8")
     listing = "".join(news_card(m) for m in current) or "<p>No news at the moment.</p>"
-    news_body = ('<div class="page-head"><div class="wrap"><h1>News</h1><p>What\'s happening across our three churches.</p></div></div>'
+    news_body = ('<div class="page-head"><div class="wrap"><h1>What\'s on</h1><p>Coming up across our three churches, soonest first.</p></div></div>'
                  f'<section class="block"><div class="wrap">{WA_BOX}<div class="grid-3">{listing}</div></div></section>')
-    (OUT / "news.html").write_text(page({"title": "News", "nav": "news", "url": "news.html", "description": "News from the benefice of Burwash, Burwash Weald and Etchingham."}, news_body), encoding="utf-8")
+    (OUT / "news.html").write_text(page({"title": "What's on", "nav": "news", "url": "news.html", "description": "What's coming up in the benefice of Burwash, Burwash Weald and Etchingham."}, news_body), encoding="utf-8")
     for m in posts:
         img = f'<div class="photo wide"><img src="{m["image"]}" alt=""></div>' if m.get("image") else ""
-        body = (f'<div class="page-head"><div class="wrap"><p class="eyebrow">News</p><h1>{html.escape(m["title"])}</h1><p>Posted: {nice_date(m["date"])}</p></div></div>'
-                f'<section class="block"><div class="wrap narrow prose">{img}{m["body"]}<p style="margin-top:2rem"><a href="news.html">&larr; All news</a></p></div></section>')
+        body = (f'<div class="page-head"><div class="wrap"><p class="eyebrow">What\'s on</p><h1>{html.escape(m["title"])}</h1><p>Posted: {nice_date(m["date"])}</p></div></div>'
+                f'<section class="block"><div class="wrap narrow prose">{img}{m["body"]}<p style="margin-top:2rem"><a href="news.html">&larr; What\'s on</a></p></div></section>')
         (OUT / m["slug"]).write_text(page({"title": m["title"], "nav": "news", "description": m["summary"], "url": m["slug"], "image": m.get("image", "")}, body), encoding="utf-8")
     nf = ('<div class="page-head"><div class="wrap"><h1>Page not found</h1><p>Sorry, we can\'t find that page.</p></div></div>'
           '<section class="block"><div class="wrap narrow prose"><p>It may have moved when we updated our website. Try our '

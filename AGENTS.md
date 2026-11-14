@@ -46,7 +46,9 @@ Each file becomes `docs/<name>.html`. Header keys:
 
 ### News: `src/news/YYYY-MM-DD-slug.md` (or `.html`)
 
-Each file becomes `docs/news-<stem>.html` and appears on `news.html` and the home page.
+Each file becomes `docs/news-<stem>.html` and appears on `news.html` ("What's on") and in the
+home page's "Coming up" section (first 3). Both list items soonest first by `until`; items
+without `until` (notices) come after.
 
 | key | meaning |
 |---|---|
