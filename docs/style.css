@@ -307,3 +307,14 @@ a.inv:hover{box-shadow:0 10px 24px rgba(50,26,58,.1);color:var(--ink)}
 @media (max-width:560px){.vision-box .vision-grid{grid-template-columns:1fr}}
 .vision-box .vision-grid h3{font-size:1.4rem}
 .vision-box .vision-title{font-size:1.5rem;margin-top:0}
+/* Home: short vision band between churches and news */
+.vision-band{background:var(--plum-deep);color:rgba(255,255,255,.9);padding:2.25rem 0;text-align:center}
+.vision-band .eyebrow{display:block;margin-bottom:.3rem}
+.vb-lead{margin:0 0 1rem;font-size:1.1rem}
+.vb-words{list-style:none;padding:0;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:860px}
+.vb-words li{border-top:3px solid var(--gold);padding-top:.6rem;font-family:"Oswald",var(--sans);font-weight:300;text-transform:uppercase;letter-spacing:.06em;font-size:1.6rem;color:#fff}
+.vb-words li:nth-child(1){border-top-color:#99daff}.vb-words li:nth-child(2){border-top-color:#b1a1ed}.vb-words li:nth-child(3){border-top-color:#bee597}.vb-words li:nth-child(4){border-top-color:#ffbd59}
+.vb-more{margin:1.1rem 0 0}
+.vb-more a{color:#e39a4e}
+@media (max-width:600px){.vb-words{grid-template-columns:repeat(2,1fr)}.vb-words li{font-size:1.35rem}}
+#vision{scroll-margin-top:110px}

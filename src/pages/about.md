@@ -15,7 +15,7 @@ Each parish has its own church council, and we share one Rector and worship toge
 
 We are part of the Church of England, in the [Diocese of Chichester](https://www.chichester.anglican.org/).
 
-## Our vision
+<h2 id="vision">Our vision</h2>
 
 <div class="vision vision-box">
 <div class="vision-intro">
