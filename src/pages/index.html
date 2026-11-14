@@ -48,13 +48,34 @@ description: Welcome to the Church of England benefice of Burwash, Burwash Weald
   </div>
 </section>
 
-<section class="vision-band" aria-label="Our vision">
+<section class="vision-band" id="vision" aria-label="Our vision">
   <div class="wrap">
-    <p class="vb-lead"><span class="eyebrow">Our vision</span> One vine, many branches: a benefice that</p>
-    <ul class="vb-words"><li>Welcomes</li><li>Cares</li><li>Grows</li><li>Talks</li></ul>
-    <p class="vb-more"><a href="about.html#vision">Read our vision &rarr;</a></p>
+    <span class="eyebrow vb-eyebrow">Our vision</span>
+    <p class="vb-intro" hidden>We are St Bartholomew's, Burwash; St Philip's, Burwash Weald; and the Assumption of the Blessed Virgin and St Nicholas, Etchingham. Each building has its own character and its own village. We celebrate our individual strengths and uphold each other. Together we are one vine with many branches (John 15:5).</p>
+    <p class="vb-lead">One vine, many branches: a benefice that</p>
+    <ul class="vb-words">
+      <li><span class="w">Welcomes</span><span class="d" hidden>everyone who comes through our doors, and goes out to find those who don't.</span></li>
+      <li><span class="w">Cares</span><span class="d" hidden>for one another and for our communities, sharing the work of pastoral care across all three parishes.</span></li>
+      <li><span class="w">Grows</span><span class="d" hidden>in faith together, in worship, in small groups and in our schools.</span></li>
+      <li><span class="w">Talks</span><span class="d" hidden>to one another, so that each church and each PCC knows what the others are doing and can share in it.</span></li>
+    </ul>
+    <p class="vb-more"><a href="about.html#vision" id="vb-toggle" aria-expanded="false">Read our vision &darr;</a></p>
   </div>
 </section>
+<script>
+(function(){
+  var b=document.getElementById('vb-toggle'),band=b.closest('.vision-band');
+  b.addEventListener('click',function(e){
+    e.preventDefault();
+    var open=b.getAttribute('aria-expanded')!=='true';
+    band.querySelectorAll('.vb-intro,.vb-words .d').forEach(function(el){el.hidden=!open;});
+    band.classList.toggle('open',open);
+    b.setAttribute('aria-expanded',open);
+    b.innerHTML=open?'Show less &uarr;':'Read our vision &darr;';
+    if(!open)band.scrollIntoView({block:'nearest'});
+  });
+})();
+</script>
 
 <section class="block" id="news">
   <div class="wrap">
