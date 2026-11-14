@@ -57,12 +57,12 @@ Tom is married to Sarah and they have two children. He is a governor of the chur
 
 Each parish has churchwardens and a Parochial Church Council (PCC), who are the church's trustees, and a Parish Safeguarding Officer. To contact any of them, please use our [contact form](contact.html) and we'll pass your message on.
 
-<table>
+<table class="stack-table">
 <thead><tr><th></th><th>Churchwardens</th><th>PCC secretary</th><th>Safeguarding officer</th></tr></thead>
 <tbody>
-<tr><th scope="row">St Bartholomew's, Burwash</th><td>Vacant: if you'd like to find out more, please <a href="contact.html">speak to the Rector</a></td><td>Jan Macfarland</td><td>Mary Westhead</td></tr>
-<tr><th scope="row">St Philip's, Burwash Weald</th><td>Jane Woodgate and Keith Lloyd</td><td>Clare Forster</td><td>Keith Lloyd</td></tr>
-<tr><th scope="row">Etchingham</th><td>Caroline Moore and Annette Childs</td><td>Paulette Barton</td><td>Annette Childs</td></tr>
+<tr><th scope="row">St Bartholomew's, Burwash</th><td data-label="Churchwardens">Vacant: if you'd like to find out more, please <a href="contact.html">speak to the Rector</a></td><td data-label="PCC secretary">Jan Macfarland</td><td data-label="Safeguarding officer">Mary Westhead</td></tr>
+<tr><th scope="row">St Philip's, Burwash Weald</th><td data-label="Churchwardens">Jane Woodgate and Keith Lloyd</td><td data-label="PCC secretary">Clare Forster</td><td data-label="Safeguarding officer">Keith Lloyd</td></tr>
+<tr><th scope="row">Etchingham</th><td data-label="Churchwardens">Caroline Moore and Annette Childs</td><td data-label="PCC secretary">Paulette Barton</td><td data-label="Safeguarding officer">Annette Childs</td></tr>
 </tbody>
 </table>
 

@@ -463,6 +463,12 @@ def build(with_redirects=True, out=None):
             (d / "index.html").write_text(redirect_stub(new), encoding="utf-8")
         (OUT / "CNAME").write_text(DOMAIN + "\n")
         (OUT / ".nojekyll").write_text("")
+        # sitemap.xml and robots.txt so search engines find every page
+        today = datetime.date.today().isoformat()
+        urls = sorted(f.name for f in OUT.glob("*.html") if f.name not in ("404.html",))
+        locs = "".join(f"<url><loc>https://{DOMAIN}/{'' if u == 'index.html' else u}</loc><lastmod>{today}</lastmod></url>" for u in urls)
+        (OUT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + locs + "</urlset>\n", encoding="utf-8")
+        (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: https://{DOMAIN}/sitemap.xml\n")
     print("Built", len(list(OUT.glob("*.html"))), "pages into", OUT)
 
 
