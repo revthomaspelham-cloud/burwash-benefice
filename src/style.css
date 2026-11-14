@@ -271,8 +271,8 @@ a.inv:hover{box-shadow:0 10px 24px rgba(50,26,58,.1);color:var(--ink)}
 /* Home: "How can we help?" strip */
 .help-strip{background:#faf6f1;border-bottom:1px solid var(--line);padding:1.75rem 0}
 .help-title{font-size:1.5rem;margin:0 0 1rem}
-.help-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:.9rem}
-.help-tile{display:flex;align-items:center;gap:.9rem;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:.9rem 1.1rem;text-decoration:none;color:var(--ink);transition:transform .15s,box-shadow .15s}
+.help-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.8rem}
+.help-tile{display:flex;align-items:center;gap:.75rem;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:.85rem 1rem;text-decoration:none;color:var(--ink);transition:transform .15s,box-shadow .15s}
 .help-tile:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(50,26,58,.1);color:var(--ink)}
 .help-tile .icon{flex:none;width:42px;height:42px;border-radius:50%;background:var(--stone-2);color:var(--plum);display:flex;align-items:center;justify-content:center}
 .help-tile .icon svg{width:22px;height:22px}
@@ -297,3 +297,4 @@ a.inv:hover{box-shadow:0 10px 24px rgba(50,26,58,.1);color:var(--ink)}
 .site-form button{justify-self:start;border:0;cursor:pointer;font:inherit}
 .form-msg{padding:1rem 1.25rem;border-radius:var(--radius);background:var(--white);border:1px solid var(--line);border-left:4px solid var(--gold)}
 .form-error{color:#9b2c2c;font-weight:600;margin:0}
+#big-moments{scroll-margin-top:110px}
