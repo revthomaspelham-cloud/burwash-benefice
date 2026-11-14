@@ -63,7 +63,6 @@
 @media (max-width:700px){.theme-mix .hero-photo.season-spring{background:linear-gradient(rgba(50,26,58,.75),rgba(50,26,58,.75)),url("images/etchingham-spring.jpg") 55% 45%/cover}}
 .theme-mix .help-strip{background:#faf6f1}
 .theme-mix .help-title{font-size:1.5rem;font-weight:300}
-.theme-mix .help-title::first-letter{color:#e39a4e}
 .theme-mix .help-tile{border-radius:14px}
 .theme-mix .help-tile .icon{background:#fff1e8;color:#b9762f}
 .theme-mix .help-tile::after{color:#e39a4e}
