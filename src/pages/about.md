@@ -27,7 +27,7 @@ We are part of the Church of England, in the [Diocese of Chichester](https://www
 <div><h3>Welcomes</h3><p>everyone who comes through our doors, and goes out to find those who don't.</p></div>
 <div><h3>Cares</h3><p>for one another and for our communities, sharing the work of pastoral care across all three parishes.</p></div>
 <div><h3>Grows</h3><p>in faith together, in worship, in small groups and in our schools.</p></div>
-<div><h3>Talks</h3><p>to one another, so that each church and each PCC knows what the others are doing and can share in it.</p></div>
+<div><h3>Connects</h3><p>our three churches and their PCCs, so that each knows what the others are doing and can share in it.</p></div>
 </div>
 </div>
 
