@@ -24,7 +24,7 @@ function doPost(e) {
     request + '\n\n' +
     'Name: ' + (name || '(anonymous)') + '\n' +
     'Email: ' + (email || '(none given)') + '\n\n' +
-    'They agreed it will be prayed for at Thursday Communion, where names may be read out.\n' +
+    'They agreed it will be offered at Thursday Communion, where names may be read out.\n' +
     'Please delete this email within a month (website privacy note).';
   var opts = { name: 'Benefice website' };
   if (/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) opts.replyTo = email;
