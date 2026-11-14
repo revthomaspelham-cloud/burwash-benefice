@@ -325,3 +325,4 @@ a.inv:hover{box-shadow:0 10px 24px rgba(50,26,58,.1);color:var(--ink)}
 [hidden]{display:none!important}
 .vb-title{font-family:"Oswald",var(--sans);font-weight:300;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(1.7rem,3vw,2.2rem);color:#fff;margin:0 0 .5rem}
 .vb-title b{font-weight:300;color:#e39a4e}
+.vb-words .w::first-letter,.vision-box .vision-grid h3::first-letter{color:#e39a4e}
