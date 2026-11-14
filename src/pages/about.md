@@ -13,7 +13,23 @@ The Benefice of Burwash, Burwash Weald and Etchingham brings together three pari
 
 Each parish has its own church council, and we share one Rector and worship together often.
 
-We are part of the Church of England, in the [Diocese of Chichester](https://www.chichester.anglican.org/). You can read about [our vision](index.html#vision) for the benefice on our home page.
+We are part of the Church of England, in the [Diocese of Chichester](https://www.chichester.anglican.org/).
+
+## Our vision
+
+<div class="vision vision-box">
+<div class="vision-intro">
+<h3 class="vision-title">One vine with many branches</h3>
+<p>We are St Bartholomew's, Burwash; St Philip's, Burwash Weald; and the Assumption of the Blessed Virgin and St Nicholas, Etchingham. Each building has its own character and its own village. We celebrate our individual strengths and uphold each other. Together we are one vine with many branches (John 15:5).</p>
+<p>We want to be a benefice that:</p>
+</div>
+<div class="vision-grid">
+<div><h3>Welcomes</h3><p>everyone who comes through our doors, and goes out to find those who don't.</p></div>
+<div><h3>Cares</h3><p>for one another and for our communities, sharing the work of pastoral care across all three parishes.</p></div>
+<div><h3>Grows</h3><p>in faith together, in worship, in small groups and in our schools.</p></div>
+<div><h3>Talks</h3><p>to one another, so that each church and each PCC knows what the others are doing and can share in it.</p></div>
+</div>
+</div>
 
 ## Our faith
 

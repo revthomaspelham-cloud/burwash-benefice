@@ -298,3 +298,12 @@ a.inv:hover{box-shadow:0 10px 24px rgba(50,26,58,.1);color:var(--ink)}
 .form-msg{padding:1rem 1.25rem;border-radius:var(--radius);background:var(--white);border:1px solid var(--line);border-left:4px solid var(--gold)}
 .form-error{color:#9b2c2c;font-weight:600;margin:0}
 #big-moments{scroll-margin-top:110px}
+.help-wide{margin-bottom:.8rem}
+.help-wide strong{font-size:1.2rem}
+.find-page .find-grid{margin-top:0}
+.vision-box{border-radius:var(--radius);padding:1.5rem 1.6rem;margin:1rem 0 2rem}
+.vision-box h2{font-size:1.6rem;margin-top:0}
+.vision-box .vision-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:560px){.vision-box .vision-grid{grid-template-columns:1fr}}
+.vision-box .vision-grid h3{font-size:1.4rem}
+.vision-box .vision-title{font-size:1.5rem;margin-top:0}

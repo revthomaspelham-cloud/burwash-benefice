@@ -29,6 +29,7 @@ NAV = [
     ("Home", "index.html", "home", []),
     ("Services", "services.html", "services", [
         ("Service calendar", "services.html", "services"),
+        ("Find your place", "find-your-place.html", "find"),
         ("Baptism & confirmation", "baptism.html", "baptism"),
         ("Weddings", "weddings.html", "weddings"),
         ("Funerals", "funerals.html", "funerals"),
