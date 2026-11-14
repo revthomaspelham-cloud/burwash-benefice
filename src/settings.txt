@@ -19,4 +19,4 @@ wedding_form: https://docs.google.com/forms/d/e/1FAIpQLSceTHN4KNUea0_Fi51I1thw7F
 
 # Prayer request form: the Web app URL from tools/prayer-requests.gs (St Bartholomew's account).
 # Until this is filled in, the form asks people to email the Rector instead.
-prayer_endpoint:
+prayer_endpoint: https://script.google.com/macros/s/AKfycbzo0trnZpLNP8HxHy02ck6hbTDEwAqUMeGEClqH6uO-fjIrtmDCB7rVMV2VlxwZgsk5cg/exec
