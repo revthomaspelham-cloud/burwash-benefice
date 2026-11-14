@@ -27,10 +27,10 @@ description: Send a prayer request to the churches of Burwash, Burwash Weald and
       <button type="submit" class="btn">Send my request</button>
     </form>
     <div class="form-msg" id="pr-thanks" hidden><strong>Thank you.</strong> Your request has been sent, and it will be offered at Thursday Communion.</div>
-    <noscript><p>To send a prayer request, please email <a href="mailto:{{rector_email}}">{{rector_email}}</a>.</p></noscript>
+    <noscript><p>To send a prayer request, please use our <a href="contact.html">contact page</a>.</p></noscript>
 
     <h3>Would you rather talk?</h3>
-    <p>Call the Rector on <a href="{{rector_phone_link}}">{{rector_phone}}</a> or email <a href="mailto:{{rector_email}}">{{rector_email}}</a>. If you'd like someone to visit, for yourself or someone you know, our <a href="get-involved.html#pastoral">pastoral team</a> would be glad to.</p>
+    <p>Call the Rector on <a href="{{rector_phone_link}}">{{rector_phone}}</a> or <a href="contact.html">send a message</a>. If you'd like someone to visit, for yourself or someone you know, our <a href="get-involved.html#pastoral">pastoral team</a> would be glad to.</p>
 
     <h3>Your information</h3>
     <p class="small">Your request goes by email to the Rector, Revd Thomas Pelham, who is responsible for it. It isn't stored on this website or shared with anyone else, apart from being offered in church as described above. The Rector deletes prayer requests within a month. You can ask for yours to be deleted sooner, or ask any questions, at <a href="mailto:{{rector_email}}">{{rector_email}}</a>.</p>
@@ -46,11 +46,11 @@ description: Send a prayer request to the churches of Burwash, Burwash Weald and
     if(!f.request.value.trim()){fail('Please write your prayer request.');f.request.focus();return;}
     if(!f.consent.checked){fail('Please tick the box to say you understand how your request will be used.');return;}
     if(f.website.value){return;}
-    if(url.indexOf('https://')!==0){fail('Sorry, the form isn’t working yet. Please email your request to {{rector_email}}.');return;}
+    if(url.indexOf('https://')!==0){fail('Sorry, the form isn’t working yet. Please send it through our Contact page instead.');return;}
     var b=f.querySelector('button');b.disabled=true;b.textContent='Sending…';
     fetch(url,{method:'POST',mode:'no-cors',body:new URLSearchParams(new FormData(f))})
       .then(function(){f.hidden=true;thanks.hidden=false;thanks.scrollIntoView({block:'center'});})
-      .catch(function(){b.disabled=false;b.textContent='Send my request';fail('Sorry, something went wrong. Please try again, or email {{rector_email}}.');});
+      .catch(function(){b.disabled=false;b.textContent='Send my request';fail('Sorry, something went wrong. Please try again, or use our Contact page.');});
   });
 })();
 </script>

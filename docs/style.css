@@ -129,7 +129,7 @@ ul.plain li{margin-bottom:.4rem}
 .photo.tall{aspect-ratio:3/4;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;padding:0}
 .photo.wide{overflow:hidden;padding:0}
 .card .photo{padding:0}
-@media (max-width:700px){.hero-photo{background:linear-gradient(rgba(50,26,58,.82),rgba(50,26,58,.82)),url("images/burwash-aerial.jpg") center/cover}}
+@media (max-width:700px){.hero-photo{background:linear-gradient(rgba(50,26,58,.82),rgba(50,26,58,.82)),url("images/burwash-aerial-sm.jpg") center/cover}}
 .photo{position:relative;overflow:hidden}
 .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 img.logo-mark{width:48px;height:auto;max-height:60px}
@@ -326,3 +326,25 @@ a.inv:hover{box-shadow:0 10px 24px rgba(50,26,58,.1);color:var(--ink)}
 .vb-title{font-family:"Oswald",var(--sans);font-weight:300;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(1.7rem,3vw,2.2rem);color:#fff;margin:0 0 .5rem}
 .vb-title b{font-weight:300;color:#e39a4e}
 .vb-words .w::first-letter,.vision-box .vision-grid h3::first-letter{color:#e39a4e}
+
+/* Phone fixes (Nov 2026) */
+@media (max-width:640px){
+  .stack-table,.stack-table tbody,.stack-table tr,.stack-table th,.stack-table td{display:block;width:100%}
+  .stack-table thead{display:none}
+  .stack-table tr{border:1px solid var(--line);border-radius:var(--radius);padding:.75rem 1rem;margin-bottom:.9rem;background:var(--white)}
+  .stack-table th[scope=row]{font-size:1.1rem;padding:0 0 .4rem;border:0}
+  .stack-table td{padding:.25rem 0;border:0}
+  .stack-table td::before{content:attr(data-label);display:block;font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
+  .facts dl{grid-template-columns:1fr;gap:0}
+  .facts dt{margin-top:.6rem}
+  .facts dd{margin:0}
+}
+@media (max-width:700px){
+  .hero-photo{padding:2.25rem 0 2rem}
+  .hero p.lead{font-size:1.08rem}
+  #churches .grid-3{gap:.8rem}
+  #churches .card{flex-direction:row;align-items:stretch}
+  #churches .card .photo{flex:0 0 36%;aspect-ratio:auto;min-height:118px;border-bottom:0}
+  #churches .card .body{padding:.8rem 1rem}
+  #churches .card .body p:last-child{font-size:.95rem;margin-bottom:0}
+}

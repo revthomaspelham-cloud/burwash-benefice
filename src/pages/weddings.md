@@ -14,7 +14,7 @@ To marry in one of our churches, one of you needs a legal connection with it: fo
 <div class="facts">
 <h3>Next step</h3>
 <p><a class="btn" href="{{wedding_form}}">Make a wedding enquiry</a></p>
-<p>Or, if you'd rather, email or phone the Rector to talk about dates and arrangements: <a href="mailto:{{rector_email}}">{{rector_email}}</a> or <a href="{{rector_phone_link}}">{{rector_phone}}</a>.</p>
+<p>Or, if you'd rather, phone the Rector on <a href="{{rector_phone_link}}">{{rector_phone}}</a> or <a href="contact.html">send a message</a> to talk about dates and arrangements.</p>
 </div>
 
 <p class="small">The Church of England's <a href="https://www.churchofengland.org/life-events/church-weddings">Your Church Wedding</a> pages have lots of helpful information about planning a church wedding. How we use your details: <a href="rector-privacy.html">privacy notice</a>.</p>

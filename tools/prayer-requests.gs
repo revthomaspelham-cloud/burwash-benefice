@@ -10,7 +10,7 @@
  * 4. Copy the Web app URL (it ends in /exec) and send it to Claude,
  *    or paste it after "prayer_endpoint:" in src/settings.txt.
  */
-var RECTOR_EMAIL = 'revthomaspelham@gmail.com';
+var RECTOR_EMAIL = 'rector@burwashbenefice.org.uk';  // forwards to the Rector's inbox
 
 function doPost(e) {
   var p = (e && e.parameter) || {};

@@ -75,7 +75,7 @@ REDIRECTS = {
 CONTACT = {
     "phone": "07856 256 174",
     "phone_href": "+447856256174",
-    "email": "revthomaspelham@gmail.com",
+    "email": "rector@burwashbenefice.org.uk",
     "facebook": "https://www.facebook.com/profile.php?id=100087591101156",
     "whatsapp": "https://chat.whatsapp.com/Hnf8zILV8Rk8XnDT7AK2zu",
 }
@@ -252,8 +252,7 @@ def _page(meta, body):
     <div>
       <h2>Get in touch</h2>
       <p>The Rector, Revd Thomas Pelham</p>
-      <p><a href="tel:{c['phone_href']}">{c['phone']}</a><br>
-      <a href="mailto:{c['email']}">{c['email']}</a></p>
+      <p><a href="tel:{c['phone_href']}">{c['phone']}</a></p>
       <p><a href="contact.html">Send us a message</a> &middot; <a href="{c['facebook']}">Facebook</a> &middot; <a href="{c['whatsapp']}">WhatsApp</a></p>
     </div>
     <div>

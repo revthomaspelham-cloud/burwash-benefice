@@ -34,7 +34,7 @@ We're sorry, but we can only accept ashes in a biodegradable container. Your fun
 
 <div class="facts">
 <h3>Talk to us</h3>
-<p>Contact the Rector: <a href="{{rector_phone_link}}">{{rector_phone}}</a> or <a href="mailto:{{rector_email}}">{{rector_email}}</a>.</p>
+<p>Contact the Rector: call <a href="{{rector_phone_link}}">{{rector_phone}}</a> or <a href="contact.html">send a message</a>.</p>
 </div>
 
 <p class="small">See also: <a href="funerals.html">Funerals &amp; memorial services</a>.</p>
