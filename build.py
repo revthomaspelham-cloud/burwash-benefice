@@ -168,9 +168,12 @@ def render_nav(active):
                 f'<li><a href="{h}"{" aria-current=\"page\"" if k == active else ""}>{html.escape(l)}</a></li>'
                 for l, h, k in children
             )
+            sid = f"sub-{key}"
             items.append(
-                f'<li class="has-sub"{cls[0:0]}><a href="{href}"{cls}>{html.escape(label)}</a>'
-                f'<ul class="sub">{sub}</ul></li>'
+                f'<li class="has-sub{" open" if is_active else ""}"><a href="{href}"{cls}>{html.escape(label)}</a>'
+                f'<button class="sub-toggle" type="button" aria-expanded="{"true" if is_active else "false"}" aria-controls="{sid}">'
+                f'<span class="visually-hidden">Show {html.escape(label)} pages</span></button>'
+                f'<ul class="sub" id="{sid}">{sub}</ul></li>'
             )
         else:
             cur = ' aria-current="page"' if is_active else ""
@@ -251,9 +254,8 @@ def _page(meta, body):
   <div class="wrap footer-grid">
     <div>
       <h2>Get in touch</h2>
-      <p>The Rector, Revd Thomas Pelham</p>
-      <p><a href="tel:{c['phone_href']}">{c['phone']}</a></p>
-      <p><a href="contact.html">Send us a message</a> &middot; <a href="{c['facebook']}">Facebook</a> &middot; <a href="{c['whatsapp']}">WhatsApp</a></p>
+      <p><a class="btn footer-contact" href="contact.html">Contact us</a></p>
+      <p><a href="{c['facebook']}">Facebook</a> &middot; <a href="{c['whatsapp']}">WhatsApp</a></p>
     </div>
     <div>
       <h2>Our churches</h2>
@@ -283,7 +285,9 @@ def _page(meta, body):
 </footer>
 <script>
 (function(){{var b=document.querySelector('.menu-toggle'),n=document.getElementById('site-nav');
-b.addEventListener('click',function(){{var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);}});}})();
+b.addEventListener('click',function(){{var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);document.body.classList.toggle('nav-open',o);}});
+var h=document.querySelector('.site-header');function sh(){{document.documentElement.style.setProperty('--header-h',h.offsetHeight+'px');}}sh();window.addEventListener('resize',sh);
+n.querySelectorAll('.sub-toggle').forEach(function(t){{t.addEventListener('click',function(){{var li=t.parentNode,o=li.classList.toggle('open');t.setAttribute('aria-expanded',o);}});}});}})();
 // Hide news whose 'until' date has passed (shown until the end of that day)
 (function(){{var t=new Date();t.setHours(0,0,0,0);
 document.querySelectorAll('[data-until]').forEach(function(el){{var d=new Date(el.dataset.until+'T00:00:00');if(d<t)el.remove();}});

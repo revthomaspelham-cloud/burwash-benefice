@@ -14,7 +14,7 @@ After a cremation, we can also bury ashes in our churchyards. See [Burial of ash
 
 <div class="facts">
 <h3>Talk to us</h3>
-<p>Contact the Rector: call <a href="{{rector_phone_link}}">{{rector_phone}}</a> or <a href="contact.html">send a message</a>.</p>
+<p><a href="contact.html">Contact the Rector</a>.</p>
 </div>
 
 <p class="small">The Church of England's <a href="https://www.churchofengland.org/life-events/funerals">funerals pages</a> have more information on planning a funeral.</p>
