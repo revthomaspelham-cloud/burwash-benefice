@@ -4,7 +4,7 @@ description: Burying or interring ashes in the churchyards of Burwash, Burwash W
 heading: Burial of ashes
 intro: A resting place in a churchyard you love.
 ---
-After a cremation, many families want the ashes laid to rest somewhere that means something to them. We can bury ashes in all three of our churchyards: St Bartholomew's, Burwash; St Philip's, Burwash Weald; and Etchingham.
+After a cremation, many families want the ashes laid to rest somewhere that means something to them. We can bury ashes in all three of our churchyards: St Bartholomew's, Burwash; St Philip's, Burwash Weald; and the Assumption of the Blessed Virgin & St Nicholas, Etchingham.
 
 ### Who can be buried here
 

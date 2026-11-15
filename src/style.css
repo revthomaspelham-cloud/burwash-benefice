@@ -370,5 +370,6 @@ a.inv:hover{box-shadow:0 10px 24px rgba(50,26,58,.1);color:var(--ink)}
   .has-sub.open:hover .sub,.has-sub.open:focus-within .sub{display:block}
   body.nav-open{overflow:hidden}
   .sub a[aria-current]{color:#e39a4e}
+  .sub a{white-space:normal}
 }
 .footer-contact{margin-top:.25rem}

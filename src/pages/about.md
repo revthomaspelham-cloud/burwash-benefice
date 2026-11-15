@@ -20,7 +20,7 @@ We are part of the Church of England, in the [Diocese of Chichester](https://www
 <div class="vision vision-box">
 <div class="vision-intro">
 <h3 class="vision-title">One vine with many branches</h3>
-<p>We are St Bartholomew's, Burwash; St Philip's, Burwash Weald; and the Assumption of the Blessed Virgin and St Nicholas, Etchingham. Each building has its own character and its own village. We celebrate our individual strengths and uphold each other. Together we are one vine with many branches (John 15:5).</p>
+<p>We are St Bartholomew's, Burwash; St Philip's, Burwash Weald; and the Assumption of the Blessed Virgin & St Nicholas, Etchingham. Each building has its own character and its own village. We celebrate our individual strengths and uphold each other. Together we are one vine with many branches (John 15:5).</p>
 <p>We want to be a benefice that:</p>
 </div>
 <div class="vision-grid">
