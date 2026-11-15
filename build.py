@@ -39,7 +39,7 @@ NAV = [
         ("Who we are", "about.html", "about"),
         ("St Bartholomew's, Burwash", "burwash.html", "burwash"),
         ("St Philip's, Burwash Weald", "burwash-weald.html", "burwash-weald"),
-        ("The Assumption of the Blessed Virgin & St Nicholas, Etchingham", "etchingham.html", "etchingham"),
+        ("The Assumption & St Nicholas, Etchingham", "etchingham.html", "etchingham"),
     ]),
     ("Get involved", "get-involved.html", "activities", [
         ("All the ways to get involved", "get-involved.html", "activities"),
@@ -262,7 +262,7 @@ def _page(meta, body):
       <ul class="plain">
         <li><a href="burwash.html">St Bartholomew's, Burwash</a></li>
         <li><a href="burwash-weald.html">St Philip's, Burwash Weald</a></li>
-        <li><a href="etchingham.html">The Assumption of the Blessed Virgin &amp; St Nicholas, Etchingham</a></li>
+        <li><a href="etchingham.html">The Assumption &amp; St Nicholas, Etchingham</a></li>
       </ul>
     </div>
     <div>
@@ -271,7 +271,7 @@ def _page(meta, body):
       <ul class="plain">
         <li><a href="https://www.parishgiving.org.uk/donors/find-your-parish/burwash-st-bartholomews-etchingham">St Bartholomew's, Burwash</a></li>
         <li><a href="https://www.parishgiving.org.uk/donors/find-your-parish/burwash-weald-st-philip-burwash-common">St Philip's, Burwash Weald</a></li>
-        <li><a href="https://www.parishgiving.org.uk/donors/find-your-parish/etchingham-st-mary-w-nicholas-hastings-tunbridge-wells">The Assumption of the Blessed Virgin &amp; St Nicholas, Etchingham</a></li>
+        <li><a href="https://www.parishgiving.org.uk/donors/find-your-parish/etchingham-st-mary-w-nicholas-hastings-tunbridge-wells">The Assumption &amp; St Nicholas, Etchingham</a></li>
       </ul>
     </div>
     <div>
