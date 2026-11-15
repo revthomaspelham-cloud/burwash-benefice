@@ -348,3 +348,8 @@ a.inv:hover{box-shadow:0 10px 24px rgba(50,26,58,.1);color:var(--ink)}
   #churches .card .body{padding:.8rem 1rem}
   #churches .card .body p:last-child{font-size:.95rem;margin-bottom:0}
 }
+/* Project drawings */
+.drawings{display:grid;grid-template-columns:1fr;gap:1.5rem;margin:1rem 0 .5rem;max-width:960px}
+.drawings figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:.75rem}
+.drawings img{width:100%;height:auto;display:block}
+.drawings figcaption{font-size:.9rem;color:var(--ink-soft);margin-top:.5rem}
