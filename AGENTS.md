@@ -126,7 +126,6 @@ For a refactor with no intended visual change, copy `docs/` before and diff afte
   `privacy.html` into `src/pages/`, add "Privacy & photo consent" under
   Safeguarding in `NAV`, and add "Join the electoral roll" to Get involved.
   The drafts are not in this repo; ask Tom.
-- Christmas Eve and Christmas Day service times are still to be added when supplied.
 - Parish safeguarding officers may be added to the contact form once they agree.
 
 ## To do (agreed with Tom for later; draft wording and check with him first)
