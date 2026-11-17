@@ -373,3 +373,13 @@ a.inv:hover{box-shadow:0 10px 24px rgba(50,26,58,.1);color:var(--ink)}
   .sub a{white-space:normal}
 }
 .footer-contact{margin-top:.25rem}
+/* Wedding photos */
+.wedding-banner{margin:0 0 2rem}
+.wedding-banner .photo.wide{margin-bottom:.5rem}
+.wedding-banner figcaption,.photo-pair figcaption,.inline-photo figcaption{font-size:.9rem;color:var(--ink-soft);margin-top:.4rem}
+.photo-pair{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0 2rem}
+.photo-pair figure{margin:0}
+.photo-pair img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border:1px solid var(--line);border-radius:var(--radius)}
+.inline-photo{margin:0 0 1rem}
+.inline-photo img{display:block;width:100%;max-width:420px;aspect-ratio:4/5;object-fit:cover;border:1px solid var(--line);border-radius:var(--radius)}
+@media (max-width:520px){.photo-pair{grid-template-columns:1fr}}
