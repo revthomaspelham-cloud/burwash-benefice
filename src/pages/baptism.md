@@ -7,6 +7,8 @@ Baptism, sometimes called christening, is the start of a journey of faith. Confi
 
 ### Baptism for children
 
+<div class="photo wide"><picture><source media="(max-width: 700px)" srcset="images/baptism-font-sm.jpg"><img src="images/baptism-font.jpg" alt="The Rector holding a baby in a white christening gown beside the flower-decked font at St Bartholomew's, with the family gathered round" style="object-position:50% 35%" loading="lazy"></picture></div>
+
 - Get in touch with the Rector to talk about a date. The enquiry form below is the easiest way.
 - We'll meet to talk through the service and what the promises mean.
 - You'll choose godparents. All godparents must have been baptised, and ideally confirmed too.
